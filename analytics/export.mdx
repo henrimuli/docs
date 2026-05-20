@@ -12,7 +12,7 @@ Hivra lets you export your analytics data as a CSV file so you can analyse it in
 
 ## Who can export
 
-CSV export is unlocked on **Creator** and **Business** plans. If you are on the Free plan, the export button is visible but disabled — upgrade to Creator to enable it.
+CSV export is unlocked on **Creator** and **Business** plans. If you are on the Free plan, the analytics section may be hidden — upgrade to Creator to access it.
 
 ## What the export includes
 
@@ -46,14 +46,14 @@ The exported CSV respects the same account and date range filters you have activ
 
 ## Triggering a manual refresh
 
-Hivra syncs analytics data on a nightly schedule. If figures look outdated — for example, a post went live hours ago and views are not updating — you can request an immediate sync:
+Hivra syncs analytics data on a nightly schedule. If figures look outdated — for example, a post went live hours ago, and views are not updating — you can request an immediate sync:
 
 <Steps>
   <Step title="Open Analytics">
     Go to **Analytics** in the sidebar.
   </Step>
   <Step title="Click Refresh">
-    Select the **Refresh** button in the Analytics header. Hivra queues an ingestion request to each connected platform's API.
+    Select the **Sync **button in the Analytics header. Hivra queues an ingestion request to each connected platform's API.
   </Step>
   <Step title="Wait a moment">
     Platform APIs are rate-limited, so the refresh may take a minute or two to complete. Reload the page to see updated figures.
@@ -69,12 +69,10 @@ Hivra syncs analytics data on a nightly schedule. If figures look outdated — f
 If a manual refresh does not resolve missing or stale metrics, check the following:
 
 <AccordionGroup>
-  <Accordion title="Grey coverage indicator for an account">
-    A grey indicator next to an account name means Hivra does not have valid API access for that account. This is usually caused by an expired OAuth token. Go to **Integrations** and reconnect the affected account.
-  </Accordion>
   <Accordion title="A metric tile shows a dash">
     A dash means the platform API returned no data for that metric and date range — not that the metric is zero. Some platforms require minimum audience thresholds or do not expose certain metrics via their API.
   </Accordion>
+
   <Accordion title="Instagram Reach is missing">
     Instagram only returns Reach data when their API makes it available. Hivra never estimates or fills in missing reach values. The stat will appear when Instagram surfaces it.
   </Accordion>

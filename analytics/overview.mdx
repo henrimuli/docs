@@ -15,7 +15,7 @@ The Analytics screen has two main tabs:
     The **Overview** tab shows aggregate performance for the selected accounts and date range. Use it to understand your overall reach, engagement totals, follower growth, and the Hivra Score gauge for the period.
   </Tab>
   <Tab title="Post Performance">
-    The **Post Performance** tab breaks metrics down by individual post so you can compare which content drove the most engagement. Each row shows the post thumbnail, platforms it was published to, and per-metric values.
+    The **Post Performance** tab breaks metrics down by individual post so you can compare which content drove the most engagement. The **View Details** modal shows each post's performance metrics.
   </Tab>
 </Tabs>
 
@@ -24,11 +24,13 @@ The Analytics screen has two main tabs:
 Use the date range picker at the top of **Analytics** to control the reporting window. Available presets include:
 
 | Preset | What it covers |
-|---|---|
+| --- | --- |
 | Last 7 days | Rolling 7-day window ending today |
 | Last 28 days | Rolling 28-day window ending today |
 | Last 90 days | Rolling 90-day window ending today |
-| Last 12 months | Rolling 12-month window ending today |
+| This Week | Rolling window showing the current week |
+| This Month | Rolling window showing the current month |
+| This Year | Rolling window showing the current year |
 
 <Tip>
   The 28-day preset is a useful baseline for comparing month-over-month trends because it avoids the variable day count in calendar months.
@@ -36,7 +38,7 @@ Use the date range picker at the top of **Analytics** to control the reporting w
 
 ## Switching between connected accounts
 
-The account selector lets you filter analytics to one or more connected accounts. Select individual accounts to isolate performance for a specific platform, or select all accounts to see blended totals across your workspace.
+The account selector sidebar lets you filter analytics to one or more connected accounts. Select individual accounts to isolate performance for a specific platform, or deselect all accounts to see blended totals across your workspace.
 
 <Note>
   Metrics are sourced from each platform's official insights API. If a connected account has lost its OAuth token or the platform's API is unavailable, that account's metrics may be missing. See the coverage hints in the UI for status details.
@@ -47,7 +49,7 @@ The account selector lets you filter analytics to one or more connected accounts
 The metrics available vary by platform. The following table shows what Hivra surfaces:
 
 | Metric | Platforms |
-|---|---|
+| --- | --- |
 | Video views | TikTok, Instagram, YouTube, Facebook |
 | Impressions | TikTok, Instagram, YouTube, Facebook, X |
 | Watch time | YouTube (shown in minutes) |
@@ -64,7 +66,7 @@ The metrics available vary by platform. The following table shows what Hivra sur
 
 ### Engagements roll-up
 
-The **Engagements** KPI tile combines likes, comments, shares, and saves into a single composite number. Hover the tile to see a tooltip listing which platforms contributed to the total for the active date range. TikTok likes are also shown on their own dedicated tile because they are often tracked independently.
+The **Engagements** KPI tile combines likes, comments, shares, and saves into a single composite number. Hover the tile to see a tooltip listing which platforms contributed to the total for the active date range. TikTok total likes are also shown on their own dedicated tile because they are often tracked independently.
 
 ## Audience demographics charts
 

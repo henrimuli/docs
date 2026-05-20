@@ -14,16 +14,16 @@ You can invite teammates to collaborate in your Hivra workspace from the **Setti
 
 <Steps>
   <Step title="Open workspace Settings">
-    Go to **Settings** in the left sidebar and select the **Members** or **Team** tab.
+    Hover the workspace chevron in the sidebar and select **Workspace Members** to view the members page, then select **Invite Member**.
   </Step>
-  <Step title="Enter the invitee's email address">
+  <Step title="Choose a role" stepNumber={2}>
+    Select **Admin** or **Member** from the role dropdown. For Admin invitees, you will also be able to configure their individual permission set (Integrations access, member invites, billing, Engagement, Analytics).
+  </Step>
+  <Step title="Set publishing approval for Members" stepNumber={3}>
+    If you are inviting a Member, choose whether they have **Full posting** rights (they can publish and schedule independently) or **Requires approval** (their posts must be approved by an Owner or eligible Admin before going live).
+  </Step>
+  <Step title="Enter the invitee's email address" stepNumber={4}>
     Type the email address of the person you want to invite. They will receive the invitation at this address.
-  </Step>
-  <Step title="Choose a role">
-    Select **Owner**, **Admin**, or **Member** from the role dropdown. For Admin invitees, you will also be able to configure their individual permission set (Integrations access, member invites, billing, Engagement, Analytics).
-  </Step>
-  <Step title="Set publishing approval for Members (Business plan)">
-    If you are inviting a Member on a Business plan workspace, choose whether they have **Full posting** rights (they can publish and schedule independently) or **Requires approval** (their posts must be approved by an Owner or eligible Admin before going live).
   </Step>
   <Step title="Send the invite">
     Click **Send invitation**. Hivra emails an invitation link to the address you entered.
@@ -31,7 +31,7 @@ You can invite teammates to collaborate in your Hivra workspace from the **Setti
 </Steps>
 
 <Note>
-  The publishing approval setting is only available on the **Business** plan. On Creator or Free, all members can publish without an approval gate. See [Publishing approvals](/publishing/approvals) for how the approval workflow operates.
+  The publishing approval setting is only available on the **Creator** and **Business** plans. On Free, workspace owners can publish without an approval gate. See [Publishing approvals](/publishing/approvals) for how the approval workflow operates.
 </Note>
 
 ## Managing pending invitations
@@ -40,8 +40,6 @@ After you send an invitation, it appears in a **Pending** list until the recipie
 
 - **Resend** the invitation if the email was not received or expired.
 - **Cancel** the invitation to withdraw it before it is accepted.
-
-A pending invitation does not consume a seat until it is accepted.
 
 ## What happens when an invitation is accepted
 
@@ -56,8 +54,8 @@ When the invited person clicks the link in their email and signs in (or creates 
 To remove someone from the workspace:
 
 <Steps>
-  <Step title="Open workspace Settings">
-    Go to **Settings** and select the **Members** tab.
+  <Step title="Open Members page">
+    Hover the workspace chevron in the sidebar and select **Workspace Members** to view the members page.
   </Step>
   <Step title="Find the member">
     Locate the person in the active members list.
