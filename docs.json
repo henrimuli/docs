@@ -14,12 +14,7 @@
     "label": "Start for free",
     "href": "https://hivra.app/signup"
   },
-  "links": [
-    {
-      "href": "https://hivra.app/signup",
-      "label": "Start for free"
-    }
-  ]
+  "links": []
 },
   "navigation": {
     "tabs": [
@@ -109,7 +104,7 @@
     "default": "system"
   },
   "search": {
-    "prompt": "Search the Hivra Help Center..."
+    "prompt": "Search ..."
   },
   "background": {
     "decoration": "grid"
