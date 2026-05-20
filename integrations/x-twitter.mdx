@@ -10,10 +10,10 @@ Hivra connects to X (formerly Twitter) through X's official authorization flow. 
 
 <Steps>
   <Step title="Open Integrations">
-    In Hivra, go to **Dashboard → Integrations** and click the **X** tile.
+    In Hivra, go to **Dashboard → Integrations** and find the **X** tile.
   </Step>
-  <Step title="Confirm the redirect">
-    Review the confirmation overlay showing your workspace and the Hivra callback URL, then click **Continue**.
+  <Step title="Start the redirect">
+    Click **Connect** to start the authorization flow.
   </Step>
   <Step title="Authorize in X">
     You are redirected to X's authorization page. Accept all requested permissions — these cover posting tweets with media on your behalf. Declining any scope prevents the connection from completing.
@@ -41,7 +41,7 @@ The video you uploaded in the Composer is automatically attached to the post as 
 
 ### Per-platform caption override
 
-To write a different tweet text specifically for X, enable **Override caption** in the X settings panel and enter your X-specific text. This is useful when your shared caption is too long for X's character limit or when you want platform-specific copy, hashtags, or mentions on X.
+To write a different tweet text specifically for X, click the X tile in the **Customize Caption Per Platform** section and enter your X-specific text. This is useful when your shared caption is too long for X's character limit or when you want platform-specific copy, hashtags, or mentions on X.
 
 <Tip>
   Hashtags and @mentions in your X caption are hyperlinked automatically. Use the per-platform override to include X-specific hashtags that are not relevant to your other destinations.
@@ -49,7 +49,7 @@ To write a different tweet text specifically for X, enable **Override caption** 
 
 ## Reconnect your X account
 
-If the integration card shows **Attention**, your X token has expired or been revoked.
+If the X integration card in the dashboard overview shows **Attention**, your X token has expired or been revoked.
 
 <Steps>
   <Step title="Open Integrations">
@@ -62,7 +62,7 @@ If the integration card shows **Attention**, your X token has expired or been re
     Accept all permissions on X's authorization page to issue a fresh token.
   </Step>
   <Step title="Confirm the health chip">
-    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+    Wait for the monitoring job to run. The chip should return to **Healthy** after the check runs.
   </Step>
 </Steps>
 

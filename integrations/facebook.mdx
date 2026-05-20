@@ -4,7 +4,7 @@ description: "Link a Facebook Page to Hivra to post Reels, videos, and Stories �
 sidebarTitle: "Connect Facebook"
 ---
 
-Hivra connects to Facebook through Meta's official authorization flow and publishes to Facebook Pages, not personal profiles. You must be an admin or editor of the Page you want to connect. Once linked, the Composer lets you publish Reels, video posts, and an optional Story companion with a per-post caption override. Because Facebook is part of Meta's platform, it shares a token family with Instagram and Threads.
+Hivra connects to Facebook through Meta's official authorization flow and publishes to Facebook Pages, not personal profiles. You must be an admin or editor of the Page you want to connect. Once linked, the Composer lets you publish Reels, video posts, and an optional Story companion with a per-post caption override.
 
 ## Prerequisites
 
@@ -22,10 +22,10 @@ Before you connect, confirm the following:
 
 <Steps>
   <Step title="Open Integrations">
-    In Hivra, go to **Dashboard → Integrations** and click the **Facebook** tile.
+    In Hivra, go to **Dashboard → Integrations** and find the **Facebook** tile.
   </Step>
-  <Step title="Confirm the redirect">
-    Review the confirmation overlay showing your workspace and the Hivra callback URL, then click **Continue**.
+  <Step title="Start the redirect">
+    Click **Connect** to start the authorization flow.
   </Step>
   <Step title="Authorize in Facebook">
     You are redirected to Meta's authorization page. Accept all requested permissions and, when prompted, select the specific Page you want to connect to Hivra. Connecting a Page you do not administer will result in a permission error.
@@ -43,25 +43,21 @@ Before you connect, confirm the following:
 
 When you add Facebook as a destination in the Composer, a settings panel appears with the following options.
 
-### Reels
-
-Toggle **Publish as Reel** to post the video in Facebook's Reels format. When this is off, the video is published as a standard Page video post. Reels receive dedicated placement in the Facebook Reels feed in addition to appearing on your Page.
-
 ### Story format
 
 Enable **Also post to Story** to publish the same video as a Facebook Story alongside the main post. Like Instagram Stories, Facebook Stories expire after 24 hours. The original Reel or video post on your Page is not affected by the Story's expiration.
 
 ### Per-platform caption override
 
-By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for Facebook, enable **Override caption** in the Facebook settings panel and enter your Facebook-specific text. This caption appears as the post description on your Page and applies only to the Facebook post.
+By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for Facebook, click the Facebook tile in the **Customize Caption Per Platform** section and enter your Facebook-specific text. This caption appears as the post description on your Page and applies only to the Facebook post.
 
 <Tip>
-  Facebook captions support links, which can drive traffic from the post. If you include a URL in the Facebook-specific caption, confirm the link preview renders correctly in the Composer preview.
+  Facebook captions support links, which can drive traffic from the post. If you include a URL in the Facebook-specific caption, confirm the link is valid before posting.
 </Tip>
 
 ## Reconnect your Facebook Page
 
-If the integration card shows **Attention**, your Meta token has expired or been revoked.
+If the Facebook integration card in the dashboard overview shows **Attention**, your Meta token has expired or been revoked.
 
 <Steps>
   <Step title="Open Integrations">
@@ -74,10 +70,10 @@ If the integration card shows **Attention**, your Meta token has expired or been
     Accept all permissions on Meta's authorization page and confirm the Page selection to issue a fresh token.
   </Step>
   <Step title="Confirm the health chip">
-    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+    Wait for the monitoring job to run. The chip should return to **Healthy** after the check runs.
   </Step>
 </Steps>
 
 <Warning>
-  If your Instagram or Threads accounts are also connected in the same workspace, check whether those cards also show **Attention** after reconnecting. A single Meta token refresh often updates all three surfaces simultaneously.
+  If your Instagram or Threads accounts are also connected in the same workspace, check whether those cards also show **Attention** after reconnecting.
 </Warning>

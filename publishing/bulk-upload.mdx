@@ -4,7 +4,7 @@ description: "Drop multiple MP4 or MOV files into the Composer at once. Each fil
 sidebarTitle: "Bulk Uploads"
 ---
 
-Bulk upload lets you bring an entire batch of video clips into a single Composer session and send them to every connected platform without repeating the setup steps for each file. Each video you drop becomes its own independent publish job in the **Library** — they share the session's baseline caption and account selections, but you can override any setting per file before you confirm.
+Bulk upload lets you bring an entire batch of video clips into a single Composer session and send them to every connected platform. Each video you drop becomes its own independent publish job in the **Library** — they share the session's baseline account selections, but you can override any setting per file before you confirm.
 
 <Tip>
   Bulk upload is particularly well-suited for vertical short-form content. If you record a week's worth of Shorts, Reels, or TikToks in one shoot, you can upload the full batch, tune each clip's caption individually, and schedule them across different time slots — all in a single session.
@@ -16,38 +16,32 @@ Bulk upload lets you bring an entire batch of video clips into a single Composer
   <Step title="Open the Composer">
     Click **New Post** in the sidebar to open the **Composer**.
   </Step>
-  <Step title="Drop all your video files at once">
-    Drag and drop multiple MP4 or MOV files into the upload area at the same time, or use the file picker to select multiple files. Every file you drop is added to the **upload dock** and begins processing immediately. You can continue adding more files while earlier ones are still uploading.
-  </Step>
-  <Step title="Select connected accounts">
+  <Step title="Select connected accounts " stepNumber={2}>
     Toggle the account tiles for every platform you want to reach. The account selection applies to all files in the session by default.
   </Step>
+  <Step title="Drop all your video files at once" stepNumber={3}>
+    Drag and drop multiple MP4 or MOV files into the upload area at the same time, or use the file picker to select multiple files. Every file you drop is added to the **upload dock** and begins processing immediately. You can continue adding more files while earlier ones are still uploading.
+
+    <Tip>
+      You can select up to 10 videos per batch.
+    </Tip>
+  </Step>
   <Step title="Write a baseline caption">
-    Type a baseline caption in the main caption field. This caption is used for every file in the batch unless you override it on individual files.
+    Type a caption in the main caption field. Each file has its own composer context window, so you can set different captions for each file separately. To switch composer context to a different file, simply select it from the media queue at the bottom of the thumbnail selection rail.
   </Step>
   <Step title="Override captions or settings per file">
-    Select each file in the upload dock to open its settings panel. Here you can write a caption that applies only to that clip, pick a different thumbnail, or adjust platform-specific settings. Files without overrides inherit the baseline caption.
+    Select each file in the upload dock to open its settings panel. Here you can write a caption that applies only to that clip and adjust platform-specific settings. 
   </Step>
-  <Step title="Choose a publish mode for the batch">
-    Select **Publish now** to send all jobs immediately, or click **Schedule** to set a time. You can set a single scheduled time that applies to all files, or open each file's settings panel to assign individual schedule times so your clips go out at different moments.
+  <Step title="Choose a publish mode for each file">
+    Select **Publish now** to send the selected file immediately, or click **Schedule** to set a time. You can assign individual schedule times so your clips go out at different moments.
   </Step>
 </Steps>
-
-## Shared captions vs. per-file overrides
-
-The baseline caption is the starting point for every job in the batch. It is the most efficient way to handle copy that is consistent across all clips — for example, a campaign hashtag block or a call-to-action that does not change.
-
-When individual clips need different copy, open that file's settings panel and type a per-file caption. The per-file caption fully replaces the baseline for that clip; it does not append to it.
-
-<Note>
-  Per-platform caption overrides (for example, a different caption for TikTok vs. YouTube) are also available inside each file's platform drawers, the same as in a single-video Composer session.
-</Note>
 
 ## Bulk scheduling multiple clips
 
 To schedule each clip at a different time:
 
-1. Open the first file's settings panel and click **Schedule**.
+1. Select the first file in the media queue, set caption, first comment, and per-platform settings, and click **Schedule**.
 2. Set the date and time for that clip.
 3. Repeat for each remaining file.
 
@@ -58,7 +52,7 @@ When you confirm the session, each file creates its own **Scheduled** job in the
 The upload dock at the bottom of the Composer tracks every file's transcode and upload progress. Files move through processing stages before they are ready to publish. You can see the status of each file — processing, ready, or failed — without leaving the Composer.
 
 <Warning>
-  If a file shows an error in the upload dock, it was not added to the publish queue. Remove it, check that it is an MP4 or MOV file with a supported codec, and re-add it before confirming the session.
+  If a file shows an upload error in the Composer, check that it is an MP4 or MOV file with a supported codec, and ensure it's within the 15min maximum allowed video length.
 </Warning>
 
 For a full guide to the Composer's other features — captions, thumbnails, platform settings, and publish modes — see [Using the Composer](/publishing/composer).

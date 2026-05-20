@@ -4,16 +4,16 @@ description: "Link your YouTube channel to Hivra to publish Shorts and videos, c
 sidebarTitle: "Connect YouTube"
 ---
 
-Hivra connects to YouTube through Google's official authorization flow. Once your channel is linked, you can publish Shorts and longer videos from the Hivra Composer with control over visibility, playlist assignment, and metadata. The video title in YouTube is drawn from the Composer caption by default, but you can override it for each post.
+Hivra connects to YouTube through Google's official authorization flow. Once your channel is linked, you can publish Shorts and longer videos from the Hivra Composer with control over visibility, playlist assignment, and metadata. The video title in YouTube is required and must be set in the YouTube settings modal before you can publish.
 
 ## Connect your YouTube channel
 
 <Steps>
   <Step title="Open Integrations">
-    In Hivra, go to **Dashboard → Integrations** and click the **YouTube** tile.
+    In Hivra, go to **Dashboard → Integrations** and find the **YouTube** tile.
   </Step>
-  <Step title="Confirm the redirect">
-    Review the confirmation overlay showing your workspace and the Hivra callback URL, then click **Continue**.
+  <Step title="Start the redirect">
+    Click **Connect** to start the authorization flow.
   </Step>
   <Step title="Authorize with Google">
     You are redirected to Google's authorization page. Accept all requested permissions — these cover uploading videos and managing your channel. Declining any scope prevents the connection from completing.
@@ -24,7 +24,7 @@ Hivra connects to YouTube through Google's official authorization flow. Once you
 </Steps>
 
 <Info>
-  Each Hivra workspace connects to a single YouTube channel. If you manage multiple channels, connect each one from a separate workspace or as an additional integration within the same workspace if the feature is available on your plan.
+  Each Hivra workspace connects to a single YouTube channel. If you manage multiple channels, connect each one from a separate workspace.
 </Info>
 
 ## YouTube publish settings
@@ -33,22 +33,22 @@ When you add YouTube as a destination in the Composer, a settings panel appears 
 
 ### Video title
 
-YouTube requires a title for every upload. By default, Hivra uses your Composer caption as the video title. To set a different title for YouTube, enter it in the **YouTube title** field in the settings panel. The title you enter here appears in YouTube Studio and on the watch page, while the shared caption remains the description field on YouTube.
+YouTube requires a title for every upload. To set a title for your YouTube video, enter it in the **YouTube title** field in the settings panel. The title you enter here appears in YouTube Studio and on the watch page, while the shared caption remains in the description field on YouTube.
 
 <Tip>
-  YouTube titles have a 100-character limit. If your shared caption is longer, set a dedicated YouTube title to avoid it being truncated.
+  YouTube titles have a 100-character limit.
 </Tip>
 
 ### Playlist
 
-Use the **Playlist** dropdown to assign the video to one of your existing YouTube playlists at publish time. The dropdown lists all playlists on the connected channel. If you do not select a playlist, the video is added only to the channel's main uploads.
+Use the **Playlist** dropdown to optionally assign the video to one of your existing YouTube playlists at publish time. The dropdown lists all playlists on the connected channel. If you do not select a playlist, the video is added only to the channel's main uploads.
 
 ### Privacy
 
 Set the visibility of the video using the **Privacy** selector:
 
 | Setting | Who can view |
-|---|---|
+| --- | --- |
 | **Public** | Anyone on YouTube and in search results |
 | **Unlisted** | Anyone with the direct link; does not appear in search or your channel page |
 | **Private** | Only you and people you explicitly invite in YouTube Studio |
@@ -59,11 +59,11 @@ Set the visibility of the video using the **Privacy** selector:
 
 ### Per-platform caption override
 
-The YouTube **Description** field is populated from the Composer's shared caption by default. To write a different description specifically for YouTube, enable **Override caption** in the YouTube settings panel and enter your YouTube-specific text. This does not affect the video title.
+The YouTube **Description** field is populated from the Composer's shared caption by default. To write a different description specifically for YouTube, click the YouTube tile in the **Customize Caption Per Platform** section and enter your YouTube-specific text. This does not affect the video title.
 
 ## Reconnect your YouTube channel
 
-If the integration card shows **Attention**, your Google token has expired or been revoked.
+If the YouTube integration card in the dashboard overview shows **Attention/Issue**, your Google token has expired or been revoked.
 
 <Steps>
   <Step title="Open Integrations">
@@ -76,7 +76,7 @@ If the integration card shows **Attention**, your Google token has expired or be
     Accept all permissions on Google's authorization page to issue a fresh token.
   </Step>
   <Step title="Confirm the health chip">
-    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+    Wait for the monitoring job to run. The chip should return to **Healthy** after the check runs.
   </Step>
 </Steps>
 

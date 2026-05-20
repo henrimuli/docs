@@ -4,16 +4,16 @@ description: "Link your Threads profile to Hivra to publish posts with reply aud
 sidebarTitle: "Connect Threads"
 ---
 
-Hivra connects to Threads using the Threads API. Once your account is linked, you can publish content from the Hivra Composer to your Threads profile. Threads offers granular control over who can reply to each post, which Hivra exposes as per-post settings in the Composer. Because Threads is a Meta product, it shares a token family with Instagram and Facebook Pages.
+Hivra connects to Threads using the Threads API. Once your account is linked, you can publish content from the Hivra Composer to your Threads profile. Threads offers granular control over who can reply to each post, which Hivra exposes as per-post settings in the Composer.
 
 ## Connect your Threads account
 
 <Steps>
   <Step title="Open Integrations">
-    In Hivra, go to **Dashboard → Integrations** and click the **Threads** tile.
+    In Hivra, go to **Dashboard → Integrations** and find the **Threads** tile.
   </Step>
-  <Step title="Confirm the redirect">
-    Review the confirmation overlay showing your workspace and the Hivra callback URL, then click **Continue**.
+  <Step title="Start the redirect">
+    Click **Connect** to start the authorization flow.
   </Step>
   <Step title="Authorize in Threads">
     You are redirected to Meta's authorization page for Threads. Accept all requested permissions — these cover creating posts on your Threads profile. Declining any scope prevents the connection from completing.
@@ -22,10 +22,6 @@ Hivra connects to Threads using the Threads API. Once your account is linked, yo
     After the redirect returns you to Hivra, your Threads handle and profile picture appear on the integration card. The health chip reads **Healthy** once the monitoring job confirms the token is valid.
   </Step>
 </Steps>
-
-<Note>
-  Instagram, Facebook Pages, and Threads share the same Meta token family. Reconnecting your Threads account may also refresh the tokens for any connected Instagram or Facebook Pages account in the same workspace.
-</Note>
 
 ## Threads publish settings
 
@@ -36,7 +32,7 @@ When you add Threads as a destination in the Composer, a settings panel appears 
 Use the **Who can reply** selector to control which accounts can respond to your post. Threads exposes the following options:
 
 | Option | Who can reply |
-|---|---|
+| --- | --- |
 | **Everyone** | Any Threads user |
 | **Accounts you follow** | Only accounts you follow on Threads |
 | **Mentioned only** | Only accounts you explicitly @mention in the post |
@@ -49,11 +45,11 @@ Use the **Who can reply** selector to control which accounts can respond to your
 
 ### Per-platform caption override
 
-By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for Threads, enable **Override caption** in the Threads settings panel and enter your Threads-specific text. Hashtags and @mentions you include here apply only to the Threads post.
+By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for Threads, click the Threads tile in the **Customize Caption Per Platform** section and enter your Threads-specific text. Hashtags and @mentions you include here apply only to the Threads post.
 
 ## Reconnect your Threads account
 
-If the integration card shows **Attention**, your Meta token has expired or been revoked.
+If the Threads integration card in the dashboard overview shows **Attention/Issue**, your Meta token has expired or been revoked.
 
 <Steps>
   <Step title="Open Integrations">
@@ -66,10 +62,10 @@ If the integration card shows **Attention**, your Meta token has expired or been
     Accept all permissions on Meta's authorization page to issue a fresh token.
   </Step>
   <Step title="Confirm the health chip">
-    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+    Wait for the monitoring job to run. The chip should return to **Healthy** after the check runs.
   </Step>
 </Steps>
 
 <Warning>
-  If your Instagram or Facebook Pages accounts are also connected in the same workspace, check whether those cards also show **Attention** after reconnecting. A single Meta token refresh often updates all three surfaces simultaneously.
+  If your Instagram or Facebook Pages accounts are also connected in the same workspace, check whether those cards also show **Attention** after reconnecting.
 </Warning>

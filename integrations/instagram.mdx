@@ -22,10 +22,10 @@ Before you connect, make sure your Instagram account meets these requirements:
 
 <Steps>
   <Step title="Open Integrations">
-    In Hivra, go to **Dashboard → Integrations** and click the **Instagram** tile.
+    In Hivra, go to **Dashboard → Integrations** and find the **Instagram** tile.
   </Step>
-  <Step title="Confirm the redirect">
-    Review the confirmation overlay showing your workspace name and the Hivra callback URL, then click **Continue**.
+  <Step title="Start the redirect">
+    Click **Connect** to start the authorization flow.
   </Step>
   <Step title="Authorize in Instagram">
     You are redirected to Meta's authorization page. Accept all requested permissions — these cover publishing Reels, reading your profile, and managing media. Declining any permission prevents the connection from completing.
@@ -34,10 +34,6 @@ Before you connect, make sure your Instagram account meets these requirements:
     After the redirect returns you to Hivra, your Instagram handle and profile picture appear on the integration card. The health chip reads **Healthy** once the monitoring job confirms the token is valid.
   </Step>
 </Steps>
-
-<Note>
-  Instagram, Facebook Pages, and Threads share the same Meta token family. Reconnecting your Instagram account may also refresh the tokens for any connected Facebook Pages or Threads account in the same workspace.
-</Note>
 
 ## Instagram publish settings
 
@@ -64,11 +60,11 @@ Enable **Also post to Stories** to publish the same video as a Story alongside t
 
 ### Per-platform caption override
 
-By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for Instagram, enable **Override caption** in the Instagram settings panel and enter your Instagram-specific text. Hashtags and mentions you include here apply only to the Instagram post.
+By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for Instagram, click the **Instagram** tile in the **Customize Caption Per Platform** section and enter your Instagram-specific text. Hashtags and mentions you include here apply only to the Instagram post.
 
 ## Reconnect your Instagram account
 
-If the integration card shows **Attention**, your token has expired or been revoked.
+If the Instagram integration card in the dashboard overview shows **Attention/Issue**, your token has expired or been revoked.
 
 <Steps>
   <Step title="Open Integrations">
@@ -81,10 +77,6 @@ If the integration card shows **Attention**, your token has expired or been revo
     Accept all permissions on Meta's authorization page to issue a fresh token.
   </Step>
   <Step title="Confirm the health chip">
-    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+    Wait for the monitoring job to run. The chip should return to **Healthy** after the check runs.
   </Step>
 </Steps>
-
-<Warning>
-  If your Instagram account is also connected to Facebook Pages or Threads in Hivra, check whether those cards also show **Attention** after reconnecting. A single Meta token refresh often updates all three surfaces.
-</Warning>

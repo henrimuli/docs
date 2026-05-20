@@ -10,22 +10,18 @@ Hivra connects to TikTok through the platform's official authorization flow. Onc
 
 <Steps>
   <Step title="Open Integrations">
-    In Hivra, go to **Dashboard → Integrations** and click the **TikTok** tile.
+    In Hivra, go to **Dashboard → Integrations** and find the **TikTok** tile.
   </Step>
-  <Step title="Confirm the redirect">
-    Review the confirmation overlay showing your workspace and the Hivra callback URL, then click **Continue**.
+  <Step title="Start the redirect">
+    Click **Connect** to start the authorization flow.
   </Step>
   <Step title="Authorize in TikTok">
-    You are redirected to TikTok's authorization page. Accept all requested permissions. If you decline any scope, the connection will not complete and the integration card will show a soft-failure state.
+    You are redirected to TikTok's authorization page. Accept all requested permissions. If you decline any scope, the connection will not complete, and the integration card will show a soft-failure state.
   </Step>
   <Step title="Verify the connection card">
     After the redirect returns you to Hivra, your TikTok handle and profile picture appear on the integration card. The health chip reads **Healthy** once the monitoring job confirms the token is valid.
   </Step>
 </Steps>
-
-<Info>
-  TikTok may restrict new app connections to private-only publishing until your account completes TikTok's app review process. If every post publishes as private regardless of your setting, this is the likely cause — contact support@hivra.app for guidance.
-</Info>
 
 ## TikTok publish settings
 
@@ -36,7 +32,7 @@ When you add TikTok as a destination in the Composer, a settings panel appears w
 Select who can view the published video using the **Audience** dropdown. The available options depend on your TikTok account settings:
 
 | Option | Who can see it |
-|---|---|
+| --- | --- |
 | **Everyone** | All TikTok users |
 | **Friends** | Mutual followers only |
 | **Followers** | Accounts that follow you |
@@ -61,17 +57,17 @@ When disclosure is on, you can specify:
 
 Toggle **Allow Duet** to let other TikTok users create a Duet with your video. This setting may be overridden by your TikTok account's own interaction settings if Duets are disabled at the account level.
 
-### Stitch controls
+### Stitch and Comment controls
 
-Toggle **Allow Stitch** to let other users clip and remix your video in their own posts. The same account-level override caveat applies as with Duets.
+Toggle **Allow Stitch** to let other users clip and remix your video in their own posts. The same account-level override caveat applies as with Duets. You may also toggle **Allow Comments** to allow users to comment on your post.
 
 ### Per-platform caption override
 
-By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for TikTok, enable **Override caption** in the TikTok settings panel and enter your TikTok-specific text. Hashtags included here count toward TikTok's caption character limit and apply only to the TikTok post.
+By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for TikTok, click the TikTok tile in the **Customize Caption Per Platform** section and enter your TikTok-specific text. Hashtags included here count toward TikTok's caption character limit and apply only to the TikTok post.
 
 ## Reconnect your TikTok account
 
-If the integration card shows **Attention**, your token has expired or been revoked by TikTok.
+If the TikTok integration card in the dashboard overview shows **Attention**, your token has expired or been revoked by TikTok.
 
 <Steps>
   <Step title="Open Integrations">
@@ -84,7 +80,7 @@ If the integration card shows **Attention**, your token has expired or been revo
     Accept all permissions on TikTok's authorization page to issue a fresh token.
   </Step>
   <Step title="Confirm the health chip">
-    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+    Wait for the monitoring job to run. The chip should return to **Healthy** after the check runs.
   </Step>
 </Steps>
 

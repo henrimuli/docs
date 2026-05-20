@@ -13,11 +13,11 @@ Every publish job in the **Library** carries a status badge that tells you exact
 | **Draft** | Saved in the Composer but not yet scheduled, submitted for approval, or published. | No — edit and publish when ready. |
 | **Scheduled** | A future publish time is set. Hivra will publish automatically when the time arrives. | No — unless you want to change or cancel the time. |
 | **Queued** | The job is lined up and waiting for Hivra's background worker to begin processing it. | No — this state is brief and transitions automatically. |
-| **Publishing** | Hivra is actively calling each selected platform's publishing API right now. | No — wait for the status to resolve. |
+| **Finalizing** | Hivra is actively calling each selected platform's publishing API right now. | No — wait for the status to resolve. |
 | **Published** | The job completed successfully on every selected platform. | None — the post is live. |
 | **Partial** | The job succeeded on some platforms and failed on one or more others. | Yes — see below. |
 | **Failed** | The publish attempt did not complete successfully on any selected platform. | Yes — see below. |
-| **Awaiting approval** | The job has been submitted by a Member and is waiting for an Owner or Admin to approve or reject it. Business plan only. | Yes (approver) — review and approve or reject. |
+| **Awaiting approval** | The job has been submitted by a Member and is waiting for an Owner or Admin to approve or reject it. | Yes (approver) — review and approve or reject. |
 
 ## Draft
 
@@ -27,11 +27,11 @@ A **Draft** is a publish job you have started in the Composer but have not yet c
 
 A **Scheduled** job has a locked future timestamp. Hivra's background worker will publish the job at that time without any further action from you. You can see all scheduled jobs in the **Library** or in the **Calendar** view.
 
-To change the scheduled time, open the Library card and edit the schedule. To cancel, you can delete the job or return it to Draft state.
+To cancel a scheduled job, you can delete the job from your Library.
 
-## Queued and Publishing
+## Queued and Finalizing
 
-**Queued** and **Publishing** are transitional states. A job enters **Queued** when its publish time has arrived and it is waiting for a worker to pick it up. It moves to **Publishing** while Hivra is actively sending the video to each platform's API. Both states are short-lived and resolve automatically — you do not need to do anything.
+**Queued** and **Finalizing** are transitional states. A job enters **Queued** when its publish time has arrived, and it is waiting for a worker to pick it up. It moves to **Finalizing** while Hivra is actively sending the video to each platform's API. Both states are short-lived and resolve automatically — you do not need to do anything.
 
 ## Published
 
@@ -73,7 +73,7 @@ A **Failed** job did not complete on any selected platform. The Library card sho
     Fix the problem at the source — reconnect the account, trim or re-encode the video, or adjust platform settings.
   </Step>
   <Step title="Republish from the Library card">
-    Once the issue is resolved, reopen the job from the Library card. You can edit the job and publish immediately or reschedule.
+    Once the issue is resolved, reopen the job from the Library card and either publish immediately or reschedule.
   </Step>
 </Steps>
 
