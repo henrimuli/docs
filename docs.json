@@ -85,5 +85,8 @@
   "logo": "/images/logo.png",
   "appearance": {
     "default": "system"
+  },
+  "search": {
+    "prompt": "Search the Hivra Help Center..."
   }
 }
