@@ -8,12 +8,15 @@
     "light": "#a45c34",
     "dark": "#fbd959"
   },
+  "navbar": {
   "links": [
     {
+      "type": "button",
       "href": "https://hivra.app",
       "label": "Visit Website"
     }
-  ],
+  ]
+},
   "navigation": {
     "tabs": [
       {
