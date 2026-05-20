@@ -8,11 +8,6 @@
     "light": "#a45c34",
     "dark": "#fbd959"
   },
-  "navbar": {
-    "primary": {
-      "type": "github",
-      "href": "https://github.com/henrimuli/hivra"
-    },
     "links": [
       {
         "href": "https://hivra.app",
