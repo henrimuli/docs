@@ -11,8 +11,8 @@
 "navbar": {
   "primary": {
     "type": "button",
-    "label": "Visit Website",
-    "href": "https://hivra.app"
+    "label": "Start for free",
+    "href": "https://hivra.app/signup"
   },
   "links": [
     {
