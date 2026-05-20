@@ -1,8 +1,12 @@
+---
+title: "connections"
+---
+
 Connected accounts are the foundation of cross-posting in Hivra. When a connection breaks or behaves unexpectedly, publishing stops until it's restored. The sections below cover the most common connection problems and exactly how to resolve each one.
 
 <AccordionGroup>
   <Accordion title="OAuth loop or redirect error during connect">
-    An OAuth loop happens when Hivra's authorization popup opens, you complete the platform's sign-in, and then the popup closes only to re-open — or returns an error instead of completing the connection.
+    An OAuth loop happens when Hivra's authorization flow initiates, you complete the platform's sign-in, but the process fails or returns an error instead of completing the connection.
 
     **Common causes and fixes:**
 
@@ -11,7 +15,7 @@ Connected accounts are the foundation of cross-posting in Hivra. When a connecti
         Ad blockers, privacy extensions, and some password managers intercept or block the OAuth redirect callback. Disable extensions for the duration of the connect flow, then re-enable them once the account is linked.
       </Step>
       <Step title="Allow popups for Hivra">
-        Most browsers block popups by default. When prompted, click **Allow** in the address bar, or add `app.hivra.app` to your browser's allowed-popups list.
+        Most browsers block popups by default. When prompted, click **Allow** in the address bar, or add `hivra.app` to your browser's allowed-popups list.
       </Step>
       <Step title="Use a clean browser profile">
         Cached tokens or cookies from a previous failed attempt can interfere with a new authorization attempt. Open a focused browser profile (or an Incognito/Private window) and try connecting again from **Integrations**.
@@ -30,7 +34,7 @@ Connected accounts are the foundation of cross-posting in Hivra. When a connecti
   </Accordion>
 
   <Accordion title="Connection shows Attention health state">
-    When a connected account displays an **Attention** health state in **Integrations**, it means Hivra's access token for that account has expired or been revoked by the platform. Hivra cannot publish to or fetch data from that account until the token is refreshed.
+    When a connected account displays an **Attention** health state in the **Integration Health** table, it means Hivra's access token for that account has expired or been revoked by the platform. Hivra cannot publish to or fetch data from that account until the token is refreshed.
 
     **What triggers Attention:**
 
@@ -45,30 +49,16 @@ Connected accounts are the foundation of cross-posting in Hivra. When a connecti
         Open **Integrations** from the sidebar. Find the account showing **Attention**.
       </Step>
       <Step title="Click Reconnect">
-        Click **Reconnect** next to the affected account. This opens the platform's authorization flow in a popup.
+        Click **Reconnect** next to the affected account. This opens the platform's authorization flow.
       </Step>
       <Step title="Complete the authorization">
-        Sign in to the platform if prompted, approve Hivra's permissions, and close the popup. The health state should update to healthy within a few seconds.
+        Sign in to the platform if prompted, then approve Hivra's permissions. The health state should update to healthy when the scheduled health check runs.
       </Step>
     </Steps>
 
     <Tip>
       After reconnecting, any scheduled posts targeting that account will resume normally at their next scheduled time. You do not need to reschedule them.
     </Tip>
-  </Accordion>
-
-  <Accordion title="Meta token family behavior (Instagram, Facebook, Threads)">
-    Instagram, Facebook Pages, and Threads share the same underlying Meta authorization. When you reconnect one of these accounts, the token refresh may automatically restore the others linked to the same Meta user.
-
-    **What this means in practice:**
-
-    - If your Instagram token expires, your Facebook and Threads connections through the same Meta account may also show **Attention** at the same time.
-    - Reconnecting any one of the three through **Integrations** initiates a single Meta OAuth flow that can refresh all three simultaneously.
-    - After reconnecting, check all three accounts in **Integrations** to confirm each one shows a healthy state.
-
-    <Warning>
-      If you connect different Facebook Pages or Instagram accounts under different Meta logins, each has an independent token. Reconnecting one will not affect accounts tied to a different Meta user.
-    </Warning>
   </Accordion>
 
   <Accordion title="Account not appearing after connecting">
@@ -129,7 +119,5 @@ Connected accounts are the foundation of cross-posting in Hivra. When a connecti
     </Steps>
   </Accordion>
 </AccordionGroup>
-
----
 
 If none of the steps above resolve your connection issue, contact the Hivra support team at [support@hivra.app](mailto:support@hivra.app) with the platform name, the error message or behavior you observed, and the browser you are using.
