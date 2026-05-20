@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Hivra Help Center",
-  "theme": "maple",
+  "theme": "almond",
   "favicon": "https://hivra.app/logo_icon.png",
   "colors": {
     "primary": "#d89738",
@@ -18,7 +18,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Hivra Help Center",
+        "tab": "Help Center",
         "groups": [
           {
             "group": "Get Started",
@@ -68,11 +68,17 @@
             "pages": [
               "team/roles",
               "team/invite-members",
-              "workspaces",
-              "account/plans",
-              "account/settings"
+              "workspaces"
             ],
             "icon": "user-group"
+          },
+          {
+            "group": "Pricing & Account",
+            "icon": "user",
+            "pages": [
+              "account/plans",
+              "account/settings"
+            ]
           },
           {
             "group": "Troubleshooting",
