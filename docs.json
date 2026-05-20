@@ -5,8 +5,8 @@
   "favicon": "https://hivra.app/logo_icon.png",
   "colors": {
     "primary": "#21c721",
-    "light": "#a45c34",
-    "dark": "#fbd959"
+    "light": "#21c721",
+    "dark": "#21c721"
   },
 "navbar": {
   "primary": {
@@ -105,7 +105,6 @@
       }
     ]
   },
-  "logo": "/images/large_logo.png",
   "appearance": {
     "default": "system"
   },
