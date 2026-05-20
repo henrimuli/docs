@@ -4,7 +4,7 @@
   "theme": "almond",
   "favicon": "https://hivra.app/logo_icon.png",
   "colors": {
-    "primary": "#d89738",
+    "primary": "#21c721",
     "light": "#a45c34",
     "dark": "#fbd959"
   },
@@ -24,7 +24,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Help Center",
+        "tab": "Start Here",
         "groups": [
           {
             "group": "Get Started",
@@ -96,20 +96,23 @@
             "icon": "memo-circle-info"
           }
         ],
-        "icon": "headset"
+        "icon": "book-open"
       },
       {
         "tab": "Hivra Status",
-        "icon": "fire",
+        "icon": "arrow-up-right-from-square",
         "href": "https://status.hivra.app"
       }
     ]
   },
-  "logo": "/images/logo.png",
+  "logo": "/images/large_logo.png",
   "appearance": {
     "default": "system"
   },
   "search": {
     "prompt": "Search the Hivra Help Center..."
+  },
+  "background": {
+    "decoration": "grid"
   }
 }
