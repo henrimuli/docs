@@ -1,14 +1,26 @@
 ---
 title: "Using the Composer to Build and Publish Posts"
-description: "A complete walkthrough of the Composer: uploading video, selecting accounts, writing captions, setting thumbnails, and choosing how to publish."
+description: "A complete walkthrough of the Composer: selecting accounts, uploading video, writing captions, setting thumbnails, and choosing how to publish."
 sidebarTitle: "Using the Composer"
 ---
 
-The **Composer** is the full-screen workspace where every publish job in Hivra begins. You open it by clicking **New Post** in the dashboard sidebar. Hivra persists your Composer session locally, so your work is saved automatically as you go — closing the tab or refreshing the page will not erase your draft.
+The **Composer** is the full-screen workspace where every publish job in Hivra begins. You open it by clicking **New Post** in the dashboard sidebar. Hivra persists your Composer session locally, so your work is saved automatically as you go — closing the Composer during file upload will not erase your progress.
 
 ## Opening the Composer
 
 Click **New Post** in the sidebar. If you have an in-progress draft, Hivra will restore it automatically so you can pick up where you left off.
+
+## Selecting connected accounts
+
+In the **Posting To** section, Hivra displays a tile for every connected account in your workspace. Toggle the tiles for the platforms you want to target — YouTube, Instagram, TikTok, Facebook, X, and Threads.
+
+<Frame>
+  ![Posting To](/images/posting_to.jpg)
+</Frame>
+
+<Tip>
+  Only accounts you have already connected in **Integrations** will appear here.
+</Tip>
 
 ## Uploading video files
 
@@ -17,14 +29,6 @@ Drag one or more MP4 or MOV files into the Composer, or click the upload area to
 <Note>
   If a file fails to transcode, check that it uses a supported codec. MP4 (H.264) and MOV are the recommended formats for all platforms.
 </Note>
-
-## Selecting connected accounts
-
-Below the upload area, Hivra displays a tile for every connected account in your workspace. Toggle the tiles for the platforms you want to target — YouTube, Instagram, TikTok, Facebook, X, and Threads. Only accounts you have already connected in **Integrations** will appear here.
-
-<Tip>
-  You can target multiple accounts on the same platform — for example, two separate Instagram profiles — if you have connected more than one account of that type.
-</Tip>
 
 ## Writing captions
 
@@ -42,21 +46,29 @@ Expand any platform drawer to write a caption that applies only to that destinat
 
 ### Saved hashtags
 
-The **Saved Hashtags** button in the caption toolbar lets you insert pre-built hashtag sets with a single click — useful for recurring campaigns where the same hashtag block repeats across many posts.
+The **Saved Hashtags** button (<Icon icon="hashtag" />) in the caption toolbar lets you insert pre-built hashtag sets with a single click — useful for saving favorite hashtags and reusing them across composer sessions.
 
 ### Emoji picker
 
-Click the emoji icon in the caption toolbar to open the emoji picker and insert an emoji at the cursor position. The picker works in both the baseline caption field and individual platform caption fields.
+Click the emoji icon (<Icon icon="face-meh" />) in the caption toolbar to open the emoji picker and insert an emoji at the cursor position. The picker works in both the baseline caption field and individual platform caption fields.
 
 ## Thumbnail selection
 
-Each platform drawer includes a thumbnail selector. You can:
+The thumbnail rail on the left of the composer allows you to set a thumbnail for your video. 
+
+<Frame>
+  ![Thumbnail](/images/thumbnail.jpg)
+</Frame>
+
+You can:
 
 - Let Hivra use the video's first frame as the default cover.
-- Scrub through the video to pick a specific frame.
+- Scrub through the video's timeline to pick a specific frame.
 - Upload a custom image to use as the thumbnail.
 
-Thumbnails are set independently per platform, so your YouTube cover frame can differ from your TikTok cover frame.
+<Tip>
+  The thumbnail you select will be used for all selected platforms that allow setting a video thumbnail.
+</Tip>
 
 ## Platform-specific settings
 
@@ -64,15 +76,15 @@ Open any platform drawer to access settings that apply only to that platform:
 
 <AccordionGroup>
   <Accordion title="TikTok">
-    Toggle the **disclosure** switch to mark your video as containing paid promotion or branded content, as required by TikTok's guidelines. Failing to disclose when required may result in TikTok restricting the post.
+    Set visibility, configure interaction controls (comments, duets, stitch), and toggle the **disclosure** switch to mark your video as containing paid promotion or branded content, as required by TikTok's guidelines. Failing to disclose when required may result in TikTok restricting the post.
   </Accordion>
 
   <Accordion title="YouTube">
-    Assign the video to one or more **playlists** from the YouTube drawer. The playlist list pulls from your connected YouTube channel, so you need an active YouTube connection for this option to appear.
+    Set the video's title (Required), configure visibility (public, unlisted, etc.), and optionally assign the video to one or more **playlists** from the YouTube settings modal. The playlist list pulls from your connected YouTube channel, so you need an active YouTube connection for this option to appear. You may also disclose if your video is intended for kids, as required by YouTube.
   </Accordion>
 
   <Accordion title="Instagram">
-    Add **collaborators** from the Instagram drawer. Invited collaborators must accept before they appear as co-authors on the published Reel.
+    Add **collaborators** and tag people from the Instagram modal. Invited collaborators must accept before they appear as co-authors on the published Reel.
   </Accordion>
 
   <Accordion title="Threads">
@@ -84,20 +96,20 @@ Open any platform drawer to access settings that apply only to that platform:
   </Accordion>
 
   <Accordion title="X">
-    No additional platform-specific settings are required beyond the caption for a standard X video post.
+    Set who can reply to your post on X (everyone, accounts you follow, etc.).
   </Accordion>
 </AccordionGroup>
 
 ## Choosing a publish mode
 
-At the bottom of the Composer, choose one of three actions:
+At the last step of the Composer, choose one of three actions:
 
 <Tabs>
   <Tab title="Publish now">
     Click **Publish now** to send the job to every selected platform immediately. Hivra begins publishing as soon as you confirm. You can watch progress in the upload dock and then track the final status in the **Library**.
   </Tab>
   <Tab title="Schedule">
-    Click **Schedule** to open the calendar and time picker. Select a future date and time, confirm, and the job enters **Scheduled** state in the Library. Hivra will publish automatically at the chosen time — you do not need to be logged in. See [Scheduling](/publishing/scheduling) for details.
+    Click **Schedule** to open the calendar and time picker. Select a future date and time, click **Done**, and the job enters **Scheduled** state in the Library. Hivra will publish automatically at the chosen time — you do not need to be logged in. See [Scheduling](/publishing/scheduling) for details.
   </Tab>
   <Tab title="Submit for approval">
     Click **Submit for approval** to send the job to an Owner or Admin for review before anything goes live. The job enters **Awaiting approval** state. This mode is available on Business plan workspaces only. See [Approvals](/publishing/approvals) for details.
@@ -106,8 +118,4 @@ At the bottom of the Composer, choose one of three actions:
 
 ## Autosave and draft persistence
 
-The Composer saves your progress to local storage automatically as you type and make changes. If you close the Composer without publishing or scheduling, the draft is preserved and restored the next time you click **New Post**. Drafts also appear in the **Library** under the **Drafts** tab, where you can reopen them at any time.
-
-<Warning>
-  Local drafts are tied to your browser. If you switch to a different browser or device, the in-progress draft will not follow you. Submit the draft or complete the publish action to ensure the job is visible to teammates in the Library.
-</Warning>
+The Composer saves your progress to local storage automatically as you type and make changes. If you close the Composer without publishing or scheduling, the draft is preserved and stored. Drafts appear in the **Library** under the **Drafts** tab, where you can reopen them at any time.
