@@ -13,7 +13,13 @@
     "type": "button",
     "label": "Visit Website",
     "href": "https://hivra.app"
-  }
+  },
+  "links": [
+    {
+      "href": "https://hivra.app/signup",
+      "label": "Start for free"
+    }
+  ]
 },
   "navigation": {
     "tabs": [
@@ -89,7 +95,13 @@
             ],
             "icon": "memo-circle-info"
           }
-        ]
+        ],
+        "icon": "headset"
+      },
+      {
+        "tab": "Hivra Status",
+        "icon": "fire",
+        "href": "https://status.hivra.app"
       }
     ]
   },
