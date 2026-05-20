@@ -108,5 +108,48 @@
   },
   "background": {
     "decoration": "grid"
+  },
+  "footer": {
+    "socials": {
+      "facebook": "https://www.facebook.com/profile.php?id=61589679359309",
+      "instagram": "https://www.instagram.com/hivra.app"
+    },
+    "links": [
+      {
+        "header": "PRODUCT",
+        "items": [
+          {
+            "label": "Features",
+            "href": "https://hivra.app/"
+          },
+          {
+            "label": "Pricing",
+            "href": "https://hivra.app/"
+          }
+        ]
+      },
+      {
+        "header": "LEGAL",
+        "items": [
+          {
+            "label": "Privacy Policy",
+            "href": "https://hivra.app/privacy"
+          },
+          {
+            "label": "Terms of Service",
+            "href": "https://hivra.app/terms"
+          }
+        ]
+      },
+      {
+        "header": "CONTACT",
+        "items": [
+          {
+            "label": "Contact Support",
+            "href": "mailto:support@hivra.app"
+          }
+        ]
+      }
+    ]
   }
 }
