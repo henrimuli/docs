@@ -1,0 +1,89 @@
+---
+title: "Connect Instagram and Configure Reels Publish Settings"
+description: "Link your Instagram professional or creator account to Hivra to publish Reels, add collaborators, and cross-post Stories — all from the Composer."
+---
+
+Hivra connects to Instagram through the platform's official authorization flow, which requires a professional account. Personal Instagram accounts cannot be connected. Once your account is linked, the Composer exposes Instagram-specific settings — including Reels surfacing, collaborators, and a Stories companion — that give you control over how each post appears on the platform.
+
+## Prerequisites
+
+Before you connect, make sure your Instagram account meets these requirements:
+
+- Your account is set to **Professional** (Business or Creator). To switch, go to Instagram **Settings → Account → Switch to professional account**.
+- The account is not currently restricted by Instagram for policy violations.
+- You are logged into the correct Instagram account in your browser before starting the OAuth flow.
+
+<Info>
+  Personal Instagram accounts are not supported by the Instagram Graph API. Hivra cannot connect to them.
+</Info>
+
+## Connect your Instagram account
+
+<Steps>
+  <Step title="Open Integrations">
+    In Hivra, go to **Dashboard → Integrations** and click the **Instagram** tile.
+  </Step>
+  <Step title="Confirm the redirect">
+    Review the confirmation overlay showing your workspace name and the Hivra callback URL, then click **Continue**.
+  </Step>
+  <Step title="Authorize in Instagram">
+    You are redirected to Meta's authorization page. Accept all requested permissions — these cover publishing Reels, reading your profile, and managing media. Declining any permission prevents the connection from completing.
+  </Step>
+  <Step title="Verify the connection card">
+    After the redirect returns you to Hivra, your Instagram handle and profile picture appear on the integration card. The health chip reads **Healthy** once the monitoring job confirms the token is valid.
+  </Step>
+</Steps>
+
+<Note>
+  Instagram, Facebook Pages, and Threads share the same Meta token family. Reconnecting your Instagram account may also refresh the tokens for any connected Facebook Pages or Threads account in the same workspace.
+</Note>
+
+## Instagram publish settings
+
+When you add Instagram as a destination in the Composer, a settings panel appears with the following options.
+
+### Reels surfacing
+
+Toggle **Share to Feed** to control where your Reel appears:
+
+- **On** — the Reel may appear in both the Feed and the Reels tab (subject to Instagram's own distribution decisions).
+- **Off** — the Reel is emphasized in the Reels tab with reduced Feed prominence.
+
+### Collaborators
+
+Add up to three Instagram usernames in the **Collaborators** field. Each collaborator receives an invite notification and, if they accept, the Reel is credited to all accounts. Only public professional accounts can be tagged as collaborators.
+
+<Tip>
+  Only public professional Instagram accounts can be tagged as collaborators. If a username you enter is not resolved, confirm the account is public and set to Professional mode.
+</Tip>
+
+### Stories companion
+
+Enable **Also post to Stories** to publish the same video as a Story alongside the Reel. The Story uses a separate media container and expires after 24 hours, as with all Instagram Stories. The Reel itself remains on your profile indefinitely.
+
+### Per-platform caption override
+
+By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for Instagram, enable **Override caption** in the Instagram settings panel and enter your Instagram-specific text. Hashtags and mentions you include here apply only to the Instagram post.
+
+## Reconnect your Instagram account
+
+If the integration card shows **Attention**, your token has expired or been revoked.
+
+<Steps>
+  <Step title="Open Integrations">
+    Go to **Dashboard → Integrations** and locate the Instagram card.
+  </Step>
+  <Step title="Click Reconnect">
+    Click **Reconnect** on the card. This opens the same OAuth flow used during initial connection.
+  </Step>
+  <Step title="Re-authorize in Instagram">
+    Accept all permissions on Meta's authorization page to issue a fresh token.
+  </Step>
+  <Step title="Confirm the health chip">
+    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+  </Step>
+</Steps>
+
+<Warning>
+  If your Instagram account is also connected to Facebook Pages or Threads in Hivra, check whether those cards also show **Attention** after reconnecting. A single Meta token refresh often updates all three surfaces.
+</Warning>

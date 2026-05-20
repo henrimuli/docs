@@ -1,0 +1,82 @@
+---
+title: "Export Analytics to CSV and Refresh Data in Hivra"
+description: "Download cross-platform performance metrics as a CSV on Creator and Business plans. Learn how to trigger a manual data refresh when figures appear stale."
+---
+
+Hivra lets you export your analytics data as a CSV file so you can analyse it in a spreadsheet, import it into a data warehouse, or share it with stakeholders. CSV export is available on the Creator and Business plans.
+
+<Note>
+  Analytics data may lag a few minutes behind real-time after a post goes live. If you export immediately after publishing, the initial view and engagement counts may not yet be reflected. Wait a short while and trigger a manual refresh before exporting for the most current figures.
+</Note>
+
+## Who can export
+
+CSV export is unlocked on **Creator** and **Business** plans. If you are on the Free plan, the export button is visible but disabled — upgrade to Creator to enable it.
+
+## What the export includes
+
+The exported CSV respects the same account and date range filters you have active in the **Analytics** screen when you click export. The file includes:
+
+- Post title and publish date
+- Platform and connected account
+- Video views / impressions (by platform)
+- Likes, comments, shares, and saves (where available per platform)
+- Watch time in minutes (YouTube)
+- Follower count at the time of the export window
+- Raw post IDs that you can join with your own data warehouse records
+
+<Tip>
+  Set your account filter and date range before exporting. The CSV will only contain data for the accounts and time window currently selected in the Analytics UI.
+</Tip>
+
+## How to export
+
+<Steps>
+  <Step title="Open Analytics">
+    Navigate to **Analytics** from the left sidebar.
+  </Step>
+  <Step title="Set your filters">
+    Choose the accounts and date range you want to export using the selectors at the top of the screen.
+  </Step>
+  <Step title="Click Export">
+    Select the **Export** button in the Analytics header. Hivra generates the CSV and your browser downloads it automatically.
+  </Step>
+</Steps>
+
+## Triggering a manual refresh
+
+Hivra syncs analytics data on a nightly schedule. If figures look outdated — for example, a post went live hours ago and views are not updating — you can request an immediate sync:
+
+<Steps>
+  <Step title="Open Analytics">
+    Go to **Analytics** in the sidebar.
+  </Step>
+  <Step title="Click Refresh">
+    Select the **Refresh** button in the Analytics header. Hivra queues an ingestion request to each connected platform's API.
+  </Step>
+  <Step title="Wait a moment">
+    Platform APIs are rate-limited, so the refresh may take a minute or two to complete. Reload the page to see updated figures.
+  </Step>
+</Steps>
+
+<Warning>
+  Manual refresh is rate-limited per platform provider. Clicking Refresh repeatedly in quick succession will not speed up the process — one request per platform is queued at a time.
+</Warning>
+
+## When data still looks wrong
+
+If a manual refresh does not resolve missing or stale metrics, check the following:
+
+<AccordionGroup>
+  <Accordion title="Grey coverage indicator for an account">
+    A grey indicator next to an account name means Hivra does not have valid API access for that account. This is usually caused by an expired OAuth token. Go to **Integrations** and reconnect the affected account.
+  </Accordion>
+  <Accordion title="A metric tile shows a dash">
+    A dash means the platform API returned no data for that metric and date range — not that the metric is zero. Some platforms require minimum audience thresholds or do not expose certain metrics via their API.
+  </Accordion>
+  <Accordion title="Instagram Reach is missing">
+    Instagram only returns Reach data when their API makes it available. Hivra never estimates or fills in missing reach values. The stat will appear when Instagram surfaces it.
+  </Accordion>
+</AccordionGroup>
+
+If the issue persists after checking the above, contact `support@hivra.app` with the account handles and the date range in question. For further troubleshooting, see the [FAQ](/troubleshooting/faq).

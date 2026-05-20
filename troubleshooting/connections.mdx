@@ -1,0 +1,137 @@
+---
+title: "Fix Account Connection and OAuth Issues in Hivra"
+description: "Resolve OAuth redirect loops, Attention health states, Meta token behavior, missing accounts, and safe disconnect sequences for connected platforms."
+---
+
+Connected accounts are the foundation of cross-posting in Hivra. When a connection breaks or behaves unexpectedly, publishing stops until it's restored. The sections below cover the most common connection problems and exactly how to resolve each one.
+
+<AccordionGroup>
+  <Accordion title="OAuth loop or redirect error during connect">
+    An OAuth loop happens when Hivra's authorization popup opens, you complete the platform's sign-in, and then the popup closes only to re-open — or returns an error instead of completing the connection.
+
+    **Common causes and fixes:**
+
+    <Steps>
+      <Step title="Disable browser extensions temporarily">
+        Ad blockers, privacy extensions, and some password managers intercept or block the OAuth redirect callback. Disable extensions for the duration of the connect flow, then re-enable them once the account is linked.
+      </Step>
+      <Step title="Allow popups for Hivra">
+        Most browsers block popups by default. When prompted, click **Allow** in the address bar, or add `app.hivra.app` to your browser's allowed-popups list.
+      </Step>
+      <Step title="Use a clean browser profile">
+        Cached tokens or cookies from a previous failed attempt can interfere with a new authorization attempt. Open a focused browser profile (or an Incognito/Private window) and try connecting again from **Integrations**.
+      </Step>
+      <Step title="Clear cookies for the platform domain">
+        If the loop persists, clear cookies specifically for the platform you're connecting (for example `instagram.com` or `tiktok.com`) and retry. You will need to sign back in to that platform during the OAuth flow.
+      </Step>
+      <Step title="Try a different browser">
+        If none of the above resolves the issue, attempt the connection from a different browser to isolate whether the problem is browser-specific.
+      </Step>
+    </Steps>
+
+    <Note>
+      OAuth loops on Instagram and Facebook are especially common when multiple Meta accounts are signed in to the same browser session. Sign out of all but the account you want to connect before starting the flow.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Connection shows Attention health state">
+    When a connected account displays an **Attention** health state in **Integrations**, it means Hivra's access token for that account has expired or been revoked by the platform. Hivra cannot publish to or fetch data from that account until the token is refreshed.
+
+    **What triggers Attention:**
+    - The platform rotated or invalidated the token (common after password changes or security reviews)
+    - You revoked Hivra's access from the platform's own app settings
+    - The token reached its maximum lifetime (platform-dependent)
+
+    **How to resolve it:**
+
+    <Steps>
+      <Step title="Go to Integrations">
+        Open **Integrations** from the sidebar. Find the account showing **Attention**.
+      </Step>
+      <Step title="Click Reconnect">
+        Click **Reconnect** next to the affected account. This opens the platform's authorization flow in a popup.
+      </Step>
+      <Step title="Complete the authorization">
+        Sign in to the platform if prompted, approve Hivra's permissions, and close the popup. The health state should update to healthy within a few seconds.
+      </Step>
+    </Steps>
+
+    <Tip>
+      After reconnecting, any scheduled posts targeting that account will resume normally at their next scheduled time. You do not need to reschedule them.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Meta token family behavior (Instagram, Facebook, Threads)">
+    Instagram, Facebook Pages, and Threads share the same underlying Meta authorization. When you reconnect one of these accounts, the token refresh may automatically restore the others linked to the same Meta user.
+
+    **What this means in practice:**
+
+    - If your Instagram token expires, your Facebook and Threads connections through the same Meta account may also show **Attention** at the same time.
+    - Reconnecting any one of the three through **Integrations** initiates a single Meta OAuth flow that can refresh all three simultaneously.
+    - After reconnecting, check all three accounts in **Integrations** to confirm each one shows a healthy state.
+
+    <Warning>
+      If you connect different Facebook Pages or Instagram accounts under different Meta logins, each has an independent token. Reconnecting one will not affect accounts tied to a different Meta user.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Account not appearing after connecting">
+    You completed the OAuth flow and Hivra confirmed the connection, but the account doesn't appear where you expect it — in your **Integrations** list, in the Composer's destination picker, or on the **Calendar**.
+
+    **Most likely cause: workspace mismatch**
+
+    Hivra scopes connected accounts to a specific workspace. If you connected the account while viewing one workspace, it will not appear in a different workspace.
+
+    <Steps>
+      <Step title="Check the active workspace">
+        Look at the workspace selector in the sidebar. The name shown is the workspace currently active.
+      </Step>
+      <Step title="Switch to the correct workspace">
+        If you have multiple workspaces, switch to the one where you intended to connect the account. The account should appear in **Integrations** there.
+      </Step>
+      <Step title="Reconnect in the right workspace if needed">
+        If the account was connected to the wrong workspace, disconnect it there and reconnect it in the correct workspace from **Integrations**.
+      </Step>
+    </Steps>
+
+    <Info>
+      Each workspace maintains its own independent list of connected accounts. An account connected in Workspace A is not available as a publishing destination in Workspace B.
+    </Info>
+  </Accordion>
+
+  <Accordion title="Disconnect and reconnect sequence — what data is preserved">
+    Before disconnecting an account, it helps to know what Hivra retains and what it removes.
+
+    **When you disconnect an account:**
+    - Posts already published through Hivra remain live on the platform — disconnecting does not delete anything on the network side.
+    - Scheduled posts in your **Library** that target the disconnected account will fail to publish at their scheduled time.
+    - Analytics history already fetched for that account may be retained in your workspace, but new data will stop syncing.
+    - The account is removed from the Composer's destination picker immediately.
+
+    **When you reconnect an account:**
+    - Hivra re-establishes API access and resumes syncing data.
+    - Previously scheduled posts that targeted this account do not automatically resume — open them in the **Composer** and reschedule.
+    - Analytics will resume syncing from the point of reconnection. Historical data from the disconnection window may not be back-filled, depending on platform API limitations.
+
+    **Recommended sequence:**
+
+    <Steps>
+      <Step title="Reschedule or publish pending posts">
+        Before disconnecting, go to **Library** and either publish or delete any scheduled posts that target the account you're about to disconnect.
+      </Step>
+      <Step title="Disconnect from Integrations">
+        Go to **Integrations**, find the account, and select **Disconnect**. Confirm when prompted.
+      </Step>
+      <Step title="Reconnect when ready">
+        Click **Connect** (or **Reconnect**) for the same platform in **Integrations** and complete the OAuth flow.
+      </Step>
+      <Step title="Reschedule any affected posts">
+        Open any Library posts that previously targeted this account and add the reconnected account back as a destination before rescheduling.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+---
+
+If none of the steps above resolve your connection issue, contact the Hivra support team at [support@hivra.app](mailto:support@hivra.app) with the platform name, the error message or behavior you observed, and the browser you are using.

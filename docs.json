@@ -1,0 +1,94 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Hivra Help Center",
+  "theme": "almond",
+  "favicon": "https://hivra.app/logo_icon.png",
+  "colors": {
+    "primary": "#d89738",
+    "light": "#a45c34",
+    "dark": "#fbd959"
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/henrimuli/hivra"
+    },
+    "links": [
+      {
+        "href": "https://hivra.app",
+        "label": "Visit Website"
+      }
+    ]
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "create-account",
+              "workspaces"
+            ],
+            "icon": "rocket-launch"
+          },
+          {
+            "group": "Publishing",
+            "pages": [
+              "publishing/overview",
+              "publishing/composer",
+              "publishing/scheduling",
+              "publishing/bulk-upload",
+              "publishing/approvals",
+              "publishing/statuses"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/instagram",
+              "integrations/tiktok",
+              "integrations/youtube",
+              "integrations/facebook",
+              "integrations/x-twitter",
+              "integrations/threads"
+            ]
+          },
+          {
+            "group": "Engagement & Analytics",
+            "pages": [
+              "engagement/overview",
+              "analytics/overview",
+              "analytics/export"
+            ]
+          },
+          {
+            "group": "Team & Account",
+            "pages": [
+              "team/roles",
+              "team/invite-members",
+              "account/plans",
+              "account/settings"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/publishing",
+              "troubleshooting/connections",
+              "troubleshooting/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": "/images/logo.png",
+  "appearance": {
+    "default": "system"
+  }
+}

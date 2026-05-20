@@ -1,0 +1,87 @@
+---
+title: "Publish Job Statuses: What Each State Means"
+description: "Every status a publish job can have in the Hivra Library, what triggered it, and what action — if any — you need to take to move the job forward."
+---
+
+Every publish job in the **Library** carries a status badge that tells you exactly where it is in the publishing pipeline. Understanding each status helps you act quickly when something needs attention and distinguish normal in-progress states from ones that require your input.
+
+## Status reference
+
+| Status | What it means | Action required? |
+|---|---|---|
+| **Draft** | Saved in the Composer but not yet scheduled, submitted for approval, or published. | No — edit and publish when ready. |
+| **Scheduled** | A future publish time is set. Hivra will publish automatically when the time arrives. | No — unless you want to change or cancel the time. |
+| **Queued** | The job is lined up and waiting for Hivra's background worker to begin processing it. | No — this state is brief and transitions automatically. |
+| **Publishing** | Hivra is actively calling each selected platform's publishing API right now. | No — wait for the status to resolve. |
+| **Published** | The job completed successfully on every selected platform. | None — the post is live. |
+| **Partial** | The job succeeded on some platforms and failed on one or more others. | Yes — see below. |
+| **Failed** | The publish attempt did not complete successfully on any selected platform. | Yes — see below. |
+| **Awaiting approval** | The job has been submitted by a Member and is waiting for an Owner or Admin to approve or reject it. Business plan only. | Yes (approver) — review and approve or reject. |
+
+## Draft
+
+A **Draft** is a publish job you have started in the Composer but have not yet committed to publishing or scheduling. Drafts are safe to leave and return to at any time. Open the Library's **Drafts** tab to see all current drafts, then click a card to reopen it in the Composer and continue editing.
+
+## Scheduled
+
+A **Scheduled** job has a locked future timestamp. Hivra's background worker will publish the job at that time without any further action from you. You can see all scheduled jobs in the **Library** or in the **Calendar** view.
+
+To change the scheduled time, open the Library card and edit the schedule. To cancel, you can delete the job or return it to Draft state.
+
+## Queued and Publishing
+
+**Queued** and **Publishing** are transitional states. A job enters **Queued** when its publish time has arrived and it is waiting for a worker to pick it up. It moves to **Publishing** while Hivra is actively sending the video to each platform's API. Both states are short-lived and resolve automatically — you do not need to do anything.
+
+## Published
+
+**Published** means every selected platform accepted the video successfully. Each platform chip on the Library card becomes a clickable link that takes you directly to the live post on that platform.
+
+## Partial
+
+A **Partial** result means the job succeeded on at least one platform but failed on one or more others. This can happen when:
+
+- One platform's API rejects the video (for example, a spec violation on that network alone).
+- A connected account's token has expired for one platform but not others.
+- A platform experiences a temporary outage during your publish window.
+
+**What to do for a Partial job:**
+
+<Steps>
+  <Step title="Open the Library card">
+    Click the job in the Library to open its details modal. The per-platform breakdown shows which platforms succeeded and which failed, along with a specific error message for each failure.
+  </Step>
+  <Step title="Fix the underlying issue">
+    Address the root cause. Common fixes include reconnecting an expired account in **Integrations**, checking that the video meets the failing platform's specs, or waiting a few minutes if the platform was temporarily unavailable.
+  </Step>
+  <Step title="Retry the failing platforms">
+    From the Library card, retry the job. Hivra will attempt only the platforms that previously failed — it will not re-post to platforms that already succeeded.
+  </Step>
+</Steps>
+
+## Failed
+
+A **Failed** job did not complete on any selected platform. The Library card shows an error message for each platform that rejected the video.
+
+**What to do for a Failed job:**
+
+<Steps>
+  <Step title="Read the error message">
+    Open the Library card to see the specific error returned by each platform. Common causes are an expired account token, a video file that exceeds a platform's size or duration limit, or a missing required field such as a TikTok disclosure toggle.
+  </Step>
+  <Step title="Resolve the issue">
+    Fix the problem at the source — reconnect the account, trim or re-encode the video, or adjust platform settings.
+  </Step>
+  <Step title="Republish from the Library card">
+    Once the issue is resolved, reopen the job from the Library card. You can edit the job and publish immediately or reschedule.
+  </Step>
+</Steps>
+
+## Awaiting approval
+
+**Awaiting approval** is a Business-plan status. It means a Member has submitted the job for review and an Owner or Admin has not yet approved or rejected it. No content has been sent to any platform. Platform chips on the Library card are greyed out to make this clear.
+
+Owners and Admins can approve or reject the job from the **Approvals** tab in the Library. For a full walkthrough of the approvals process, see [Approvals](/publishing/approvals).
+
+## Troubleshooting Partial and Failed jobs
+
+If a retry does not resolve the issue, or if you are unsure what the error message means, visit [Troubleshooting publishing](/troubleshooting/publishing) for a guide to the most common platform-specific error codes and how to fix them.

@@ -1,0 +1,114 @@
+---
+title: "Fix Common Publishing Errors and Failed Posts"
+description: "Resolve upload rejections, missed schedules, partial publishes, and quota limits so your content reaches every platform without interruption."
+---
+
+Publishing issues usually fall into one of a few categories: a file that didn't pass platform validation, a scheduled post that never fired, or a job that succeeded on some platforms but failed on others. This page walks through each scenario with steps to diagnose and fix the problem.
+
+## Upload rejected or transcode failed
+
+When you upload a file and Hivra reports a rejection or transcode failure, the cause is almost always the file format, codec, or size.
+
+<Steps>
+  <Step title="Check the file format">
+    Hivra accepts **MP4** and **MOV** containers. If your file is in a different format (AVI, MKV, WMV, and so on), re-export it as MP4 before uploading.
+  </Step>
+  <Step title="Verify the codec">
+    Use H.264 (AVC) for video and AAC for audio. H.265/HEVC and other codecs may be rejected by one or more destination platforms even if Hivra accepts the file initially. Re-encode the file with H.264 if you see a transcode error.
+  </Step>
+  <Step title="Reduce the file size if needed">
+    Each platform enforces its own size ceiling. As a general rule, keep files under 2 GB and aim for a bitrate appropriate to your target resolution. Lower the bitrate or trim the clip length if the upload fails with a size-related error.
+  </Step>
+  <Step title="Retry the upload">
+    After adjusting the file, open the **Composer** and upload the corrected version. The previous failed job can be deleted from your **Library**.
+  </Step>
+</Steps>
+
+<Tip>
+  Check the platform-specific video specs article for exact duration and resolution limits per destination before you encode your final file.
+</Tip>
+
+## Scheduled post missed its window
+
+If a scheduled post shows a past time but never went live, work through the following checklist.
+
+<Steps>
+  <Step title="Check connection health">
+    Go to **Integrations** and review the health indicator for each account targeted by the post. An account showing **Attention** means the token has expired or been revoked. Hivra cannot publish to a disconnected account. See [Troubleshoot connection issues](/troubleshooting/connections) for how to reconnect.
+  </Step>
+  <Step title="Confirm the scheduled time and time zone">
+    Open the post from your **Library** and verify the scheduled time. Hivra schedules against the time zone set in your account preferences. If your device clock or account time zone changed after you set the schedule, the post may have fired at an unexpected moment or been skipped.
+  </Step>
+  <Step title="Check your plan quota">
+    The Free plan includes **5 publishes per month**. If you reached that limit before the scheduled time, the post will not fire until the quota resets at the start of the next billing month. Upgrade to a Creator or Business plan to remove this ceiling.
+  </Step>
+  <Step title="Reschedule or publish immediately">
+    If the post is still in **Scheduled** status, you can open it in the **Composer**, adjust the time, and save again. If the window has already passed, publish immediately or pick a new future time.
+  </Step>
+</Steps>
+
+<Note>
+  Token expiry is the most common cause of missed schedules. Reconnecting an account before the next scheduled post prevents this from happening again.
+</Note>
+
+## Partial publish — some platforms succeeded, some failed
+
+A **Partial** status means Hivra sent the post to all selected destinations, but at least one platform returned an error while at least one other succeeded.
+
+<Warning>
+  A Partial status means your post is already live on the platforms that succeeded. Retrying the full job will create duplicate posts on those platforms. Only retry for the specific platforms that failed.
+</Warning>
+
+<Steps>
+  <Step title="Identify which platforms failed">
+    Open the publish job in your **Library**. The job detail view lists each destination with its individual result—look for platforms marked **Failed** or showing an error message.
+  </Step>
+  <Step title="Check the error for each failed platform">
+    Platform errors often include a code or message (for example, caption too long, missing thumbnail, or auth error). Address the specific issue for each failed destination before retrying.
+  </Step>
+  <Step title="Reconnect if the error is auth-related">
+    If the error mentions token, auth, or permission, go to **Integrations** and reconnect that account. See [Troubleshoot connection issues](/troubleshooting/connections).
+  </Step>
+  <Step title="Retry only the failed destinations">
+    After fixing the underlying issue, create a new publish job targeting only the platforms that failed. Reuse the same media and caption to keep content consistent.
+  </Step>
+</Steps>
+
+## Failed status — platform error or auth issue
+
+A **Failed** status means the publish attempt did not complete successfully on any destination. This is distinct from Partial, where at least one destination succeeded.
+
+<Steps>
+  <Step title="Open the job in your Library">
+    Go to **Library** and click the failed job. The detail panel shows the error message returned by each platform that rejected the post.
+  </Step>
+  <Step title="Read the error message">
+    Common causes include expired auth tokens, platform-side rate limits, content policy violations, and missing required fields (such as a category for YouTube uploads).
+  </Step>
+  <Step title="Reconnect the account if needed">
+    Go to **Integrations**, find the affected account, and click **Reconnect**. Complete the platform's authorization flow. Return to **Library** once reconnected.
+  </Step>
+  <Step title="Edit and retry the post">
+    Open the failed job in the **Composer**, fix the issue identified in the error message, and publish again. See [Post statuses](/publishing/statuses) for a full description of each status and what triggers it.
+  </Step>
+</Steps>
+
+## Free plan quota reached
+
+The Free plan allows **5 publishes per month**. When you hit this limit, Hivra will not process any additional publish or schedule requests until the quota resets.
+
+<Steps>
+  <Step title="Check your current usage">
+    Your publish count for the current month is visible in your account or billing settings.
+  </Step>
+  <Step title="Upgrade your plan">
+    Go to **Billing** in your account settings and upgrade to Creator or Business to get a higher monthly limit. Your existing scheduled posts will process as soon as the upgrade takes effect.
+  </Step>
+  <Step title="Wait for the monthly reset">
+    If you prefer to stay on the Free plan, your quota resets at the start of the next billing month. Drafts you have already saved will remain in your **Library** and can be published or scheduled once the limit resets.
+  </Step>
+</Steps>
+
+<Info>
+  Upgrading mid-month does not carry over unused quota from previous months. The new, higher limit applies from the moment the upgrade is confirmed.
+</Info>

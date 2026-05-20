@@ -1,0 +1,97 @@
+---
+title: "Integrations: Connect Your Social Accounts to Hivra"
+description: "Link Instagram, TikTok, YouTube, Facebook, X, and Threads to Hivra via OAuth so you can upload once and cross-post everywhere from a single Composer."
+---
+
+Hivra connects to your social accounts through each platform's official OAuth flow. You authorize Hivra once per account, and Hivra stores an access token that lets it publish on your behalf — you never share your password. This page explains how every connection works, what the health states mean, and when to reconnect or disconnect an account.
+
+## How connections work
+
+Every platform follows the same four-step flow regardless of which tile you choose.
+
+<Steps>
+  <Step title="Choose a platform tile">
+    Open **Dashboard → Integrations** and click the tile for the platform you want to connect. The tile list shows all supported platforms and indicates which are already linked.
+  </Step>
+  <Step title="Confirm the redirect">
+    A confirmation overlay appears summarizing the workspace you are wiring and the callback URL that fires when the platform returns control to Hivra. Review it, then click **Continue**.
+  </Step>
+  <Step title="Grant scopes in the platform's UI">
+    You are redirected to the platform's own authorization page. Accept all the permissions listed — these are the minimum scopes Hivra needs to publish. If you decline any scope, the callback lands in a soft-failure state and the connection will not complete.
+  </Step>
+  <Step title="Validate the connection card">
+    After the redirect returns you to Hivra, the integration card displays your profile picture, handle, and a health chip. Within a few minutes the monitoring job runs and the chip should read **Healthy**.
+  </Step>
+</Steps>
+
+## Supported platforms
+
+<CardGroup cols={2}>
+  <Card title="Instagram" icon="instagram" href="/integrations/instagram">
+    Share Reels and Stories to your Instagram professional or creator account.
+  </Card>
+  <Card title="TikTok" icon="tiktok" href="/integrations/tiktok">
+    Publish videos directly to your TikTok profile with privacy and disclosure controls.
+  </Card>
+  <Card title="YouTube" icon="youtube" href="/integrations/youtube">
+    Upload Shorts and long-form videos to your YouTube channel with playlist and privacy settings.
+  </Card>
+  <Card title="Facebook" icon="facebook" href="/integrations/facebook">
+    Post Reels and videos to your Facebook Page.
+  </Card>
+  <Card title="X" icon="x-twitter" href="/integrations/x-twitter">
+    Share video clips and tweet text to your X timeline.
+  </Card>
+  <Card title="Threads" icon="threads" href="/integrations/threads">
+    Publish content to your Threads profile with reply audience controls.
+  </Card>
+</CardGroup>
+
+## Connection health states
+
+Each integration card displays a health chip that updates after every monitoring cycle.
+
+| State | Meaning |
+|---|---|
+| **Healthy** | The stored token is valid and Hivra can publish to this account. |
+| **Attention** | The token has expired or been revoked. Scheduled posts to this account will fail until you reconnect. |
+
+You can also see an aggregated health summary on the **Dashboard overview** page. Hover any widget to jump directly to the **Integrations** page for that account.
+
+## When to reconnect vs disconnect
+
+- **Reconnect** when the health chip reads **Attention** or you receive an email alert about a failed scheduled post. Reconnecting re-runs the OAuth flow and issues a fresh token without removing any of your existing drafts or publish history.
+- **Disconnect** when an account should stop receiving posts entirely. Content already published to the platform stays live, but Hivra will no longer target that account for new publishes.
+
+<Warning>
+  Disconnecting an account removes it from all queued and scheduled posts. Review your upcoming schedule before disconnecting.
+</Warning>
+
+## Meta token family: Instagram, Facebook, and Threads
+
+Instagram, Facebook Pages, and Threads are all Meta products that share the same OAuth token family. When you reconnect one of these accounts, the refresh may also update the tokens for the other two. This is expected behavior — if you manage all three surfaces in Hivra, reconnect them together so the tokens stay in sync.
+
+<Note>
+  If one Meta account shows **Attention**, check whether the other two are also affected before reconnecting just one.
+</Note>
+
+## Troubleshooting connection issues
+
+<AccordionGroup>
+  <Accordion title="OAuth redirect loop or blank screen after authorization">
+    Browser extensions — particularly ad blockers and privacy shields — can intercept the OAuth redirect. Try connecting in a fresh browser window with extensions disabled, or use a private/incognito window.
+  </Accordion>
+  <Accordion title="Connection card shows Attention immediately after authorizing">
+    Confirm you accepted every permission on the platform's authorization page. If you dismissed any scope, disconnect the partial connection and restart the flow, accepting all scopes this time.
+  </Accordion>
+  <Accordion title="Wrong workspace is connected">
+    Use the sidebar switcher to verify you are inside the correct workspace before starting the OAuth flow. Tokens are scoped to the workspace that was active when you authorized.
+  </Accordion>
+  <Accordion title="Still failing after multiple attempts">
+    Copy the URL from your browser's address bar immediately after the redirect completes, note the timestamp, and email both to support@hivra.app. The support team can correlate the URL parameters with server-side ingestion logs to diagnose the failure.
+  </Accordion>
+</AccordionGroup>
+
+## Suggest a new platform
+
+If you publish to a platform Hivra does not yet support, use the **Suggest integration** field at the bottom of the **Integrations** page to submit it. Suggestions are reviewed when planning the platform roadmap.

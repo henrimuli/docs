@@ -1,0 +1,66 @@
+---
+title: "Scheduling Posts for Automatic Cross-Platform Publishing"
+description: "Pick a future date and time in the Composer and Hivra publishes automatically — no need to stay logged in. Learn how scheduling, time zones, and retries work."
+---
+
+Scheduling lets you plan your publishing calendar in advance and hand off the actual send to Hivra. Once you set a scheduled time, Hivra's background worker takes over — watching the clock, validating your account tokens, and calling each platform's API at the right moment. You do not need to be logged in when the scheduled time arrives.
+
+## Setting a scheduled time in the Composer
+
+<Steps>
+  <Step title="Open the Composer">
+    Click **New Post** in the sidebar, upload your video, select your connected accounts, and write your captions as you normally would.
+  </Step>
+  <Step title="Click Schedule">
+    At the bottom of the Composer, click **Schedule** instead of **Publish now**. A date and time picker opens inline.
+  </Step>
+  <Step title="Pick a date and time">
+    Use the calendar to choose the publishing day. Adjust the hour and minute wheels to set the exact time. Hivra clamps impossible selections — for example, you cannot choose a time in the past — so the picker guides you to a valid slot automatically.
+  </Step>
+  <Step title="Review and confirm">
+    A summary shows which connected accounts will receive the post and the scheduled timestamp. Confirm to lock the schedule. The job moves to **Scheduled** state in the Library immediately.
+  </Step>
+</Steps>
+
+## Time zones
+
+Hivra's time picker reflects your browser's local time zone. The timestamp you see is the time in your local time zone — Hivra converts it to UTC internally and publishes at the correct moment regardless of where you are when the time arrives.
+
+<Warning>
+  Daylight saving time transitions can shift how a local time label appears in the Library. Before a major campaign launch, confirm the scheduled time by checking the details modal on the Library card — it displays the ISO timestamp so there is no ambiguity.
+</Warning>
+
+## What happens when the scheduled time arrives
+
+When the scheduled time arrives, Hivra automatically:
+
+1. Validates that your connected account tokens are still active.
+2. Sends the video and metadata to each selected platform.
+3. Updates the job's status in the Library based on the results from each platform.
+
+If all platforms accept the video, the job moves to **Published**. If one or more platforms fail, the job moves to **Partial** or **Failed**, and the Library card shows per-platform error details so you know exactly which destination needs attention.
+
+## Viewing scheduled posts in the Calendar
+
+Open **Calendar** from the sidebar to see a week-by-week or month-by-month view of everything scheduled across your connected accounts. Click any scheduled item in the Calendar to jump directly to its Library card, where you can edit the schedule or check job details.
+
+## Free plan and the monthly upload quota
+
+On the Free plan, Hivra allows 5 publish completions per UTC calendar month. Scheduled posts count toward this quota when they publish, not when you schedule them. If you reach the monthly limit before a scheduled post fires, that post will not go through until the quota resets at the start of the next UTC month or you upgrade your plan.
+
+<Info>
+  The quota applies to both **Publish now** and **Schedule** completions equally. Drafts and jobs in **Awaiting approval** state do not consume quota until they actually publish.
+</Info>
+
+## Combining scheduling with the approvals workflow
+
+On Business plan workspaces, you can route a post through the approvals workflow before locking a schedule. Submit the job for approval; once an Owner or Admin approves it, the scheduled time is released and the job publishes at the originally chosen time. See [Approvals](/publishing/approvals) for details.
+
+## When a scheduled post fails
+
+If a scheduled post does not reach a platform successfully, the job appears in the Library with a **Failed** or **Partial** status. Open the Library card to read the per-platform error message, then:
+
+- Fix the underlying issue (for example, reconnect an expired account token in **Integrations**).
+- Reopen the job from the Library card and reschedule or publish immediately.
+
+For a full list of statuses and recommended next steps, see [Publish job statuses](/publishing/statuses).

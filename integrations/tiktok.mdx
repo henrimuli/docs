@@ -1,0 +1,92 @@
+---
+title: "Connect TikTok and Configure Video Publish Settings"
+description: "Link your TikTok profile to Hivra and control privacy, audience, disclosure labels, duet, and stitch settings from the Composer before every publish."
+---
+
+Hivra connects to TikTok through the platform's official authorization flow. Once your account is linked, you can publish videos directly from the Hivra Composer with full control over who can view and interact with each post. TikTok requires certain disclosure settings for branded content, and Hivra surfaces those controls alongside the standard privacy and interaction toggles.
+
+## Connect your TikTok account
+
+<Steps>
+  <Step title="Open Integrations">
+    In Hivra, go to **Dashboard → Integrations** and click the **TikTok** tile.
+  </Step>
+  <Step title="Confirm the redirect">
+    Review the confirmation overlay showing your workspace and the Hivra callback URL, then click **Continue**.
+  </Step>
+  <Step title="Authorize in TikTok">
+    You are redirected to TikTok's authorization page. Accept all requested permissions. If you decline any scope, the connection will not complete and the integration card will show a soft-failure state.
+  </Step>
+  <Step title="Verify the connection card">
+    After the redirect returns you to Hivra, your TikTok handle and profile picture appear on the integration card. The health chip reads **Healthy** once the monitoring job confirms the token is valid.
+  </Step>
+</Steps>
+
+<Info>
+  TikTok may restrict new app connections to private-only publishing until your account completes TikTok's app review process. If every post publishes as private regardless of your setting, this is the likely cause — contact support@hivra.app for guidance.
+</Info>
+
+## TikTok publish settings
+
+When you add TikTok as a destination in the Composer, a settings panel appears with the following options.
+
+### Privacy and audience
+
+Select who can view the published video using the **Audience** dropdown. The available options depend on your TikTok account settings:
+
+| Option | Who can see it |
+|---|---|
+| **Everyone** | All TikTok users |
+| **Friends** | Mutual followers only |
+| **Followers** | Accounts that follow you |
+| **Only me** | Private — visible to you only |
+
+The available options are determined by your TikTok account settings. If your account does not have access to a particular option (for example, if your account is new or under review), that option will not appear.
+
+### Disclosure: branded content and paid partnerships
+
+Enable the **Disclosure** toggle to label the video as branded content or a paid partnership. This is required by TikTok's policies when you are promoting a product, service, or brand in exchange for compensation.
+
+When disclosure is on, you can specify:
+
+- **Branded content** — you created the content in partnership with a brand.
+- **Paid partnership** — a brand paid you to post this specific content.
+
+<Warning>
+  Failing to disclose paid partnerships when required violates TikTok's Community Guidelines and may result in content removal or account penalties. Enable the disclosure toggle whenever applicable.
+</Warning>
+
+### Duet controls
+
+Toggle **Allow Duet** to let other TikTok users create a Duet with your video. This setting may be overridden by your TikTok account's own interaction settings if Duets are disabled at the account level.
+
+### Stitch controls
+
+Toggle **Allow Stitch** to let other users clip and remix your video in their own posts. The same account-level override caveat applies as with Duets.
+
+### Per-platform caption override
+
+By default, the Composer's shared caption is used for all destinations. To write a different caption specifically for TikTok, enable **Override caption** in the TikTok settings panel and enter your TikTok-specific text. Hashtags included here count toward TikTok's caption character limit and apply only to the TikTok post.
+
+## Reconnect your TikTok account
+
+If the integration card shows **Attention**, your token has expired or been revoked by TikTok.
+
+<Steps>
+  <Step title="Open Integrations">
+    Go to **Dashboard → Integrations** and locate the TikTok card.
+  </Step>
+  <Step title="Click Reconnect">
+    Click **Reconnect** on the card to restart the OAuth flow.
+  </Step>
+  <Step title="Re-authorize in TikTok">
+    Accept all permissions on TikTok's authorization page to issue a fresh token.
+  </Step>
+  <Step title="Confirm the health chip">
+    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+  </Step>
+</Steps>
+
+<Tip>
+  TikTok tokens can expire after a period of inactivity or if you change your TikTok account password. If you update your TikTok credentials, reconnect the account in Hivra immediately to avoid publish failures.
+</Tip>

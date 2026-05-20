@@ -1,0 +1,70 @@
+---
+title: "Connect X (Twitter) and Configure Video Post Settings"
+description: "Link your X account to Hivra to publish video clips with tweet text to your timeline, with an optional per-platform caption override in the Composer."
+---
+
+Hivra connects to X (formerly Twitter) through X's official authorization flow. Once your account is linked, you can include X as a destination in the Hivra Composer. Each post consists of tweet text drawn from your caption and the video you uploaded — X does not offer per-video privacy levels in the same way as YouTube or TikTok, so posts are public by default on your timeline.
+
+## Connect your X account
+
+<Steps>
+  <Step title="Open Integrations">
+    In Hivra, go to **Dashboard → Integrations** and click the **X** tile.
+  </Step>
+  <Step title="Confirm the redirect">
+    Review the confirmation overlay showing your workspace and the Hivra callback URL, then click **Continue**.
+  </Step>
+  <Step title="Authorize in X">
+    You are redirected to X's authorization page. Accept all requested permissions — these cover posting tweets with media on your behalf. Declining any scope prevents the connection from completing.
+  </Step>
+  <Step title="Verify the connection card">
+    After the redirect returns you to Hivra, your X handle and profile picture appear on the integration card. The health chip reads **Healthy** once the monitoring job confirms the token is valid.
+  </Step>
+</Steps>
+
+<Info>
+  X publishes posts to your public timeline. There is no API-level option to post privately or restrict who sees a post beyond the reply settings described below.
+</Info>
+
+## X publish settings
+
+When you add X as a destination in the Composer, a settings panel appears with the following options.
+
+### Tweet text
+
+The **Tweet text** field is populated from the Composer's shared caption by default. X displays this text alongside your video on the timeline. Keep in mind X's character limit when writing your caption — if the shared caption exceeds the limit, use the per-platform caption override to write a shorter version specifically for X.
+
+### Media attachment
+
+The video you uploaded in the Composer is automatically attached to the post as the media. Hivra uploads the video file to X's media endpoint before creating the tweet. No additional configuration is needed for the media attachment.
+
+### Per-platform caption override
+
+To write a different tweet text specifically for X, enable **Override caption** in the X settings panel and enter your X-specific text. This is useful when your shared caption is too long for X's character limit or when you want platform-specific copy, hashtags, or mentions on X.
+
+<Tip>
+  Hashtags and @mentions in your X caption are hyperlinked automatically. Use the per-platform override to include X-specific hashtags that are not relevant to your other destinations.
+</Tip>
+
+## Reconnect your X account
+
+If the integration card shows **Attention**, your X token has expired or been revoked.
+
+<Steps>
+  <Step title="Open Integrations">
+    Go to **Dashboard → Integrations** and locate the X card.
+  </Step>
+  <Step title="Click Reconnect">
+    Click **Reconnect** on the card to restart the OAuth flow.
+  </Step>
+  <Step title="Re-authorize in X">
+    Accept all permissions on X's authorization page to issue a fresh token.
+  </Step>
+  <Step title="Confirm the health chip">
+    Wait for the monitoring job to run. The chip should return to **Healthy** within a few minutes.
+  </Step>
+</Steps>
+
+<Warning>
+  Changing your X account password or revoking app access from X's **Settings → Security and account access → Apps and sessions** will invalidate your Hivra token immediately. Reconnect from the **Integrations** page after any such change.
+</Warning>

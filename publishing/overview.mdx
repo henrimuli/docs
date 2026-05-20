@@ -1,0 +1,60 @@
+---
+title: "Publishing Overview: From Upload to Live"
+description: "Learn how Hivra moves a video from your first upload through the Composer and Library pipeline to a live post on every connected platform."
+---
+
+Publishing in Hivra follows a single, consistent pipeline regardless of how many platforms you target or whether you publish immediately, schedule in advance, or route through an approval workflow. Every publish job starts in the **Composer**, lands in the **Library**, and progresses through a predictable sequence of statuses until it is live — or flagged for your attention if something goes wrong.
+
+## The publishing pipeline at a glance
+
+Every publish job moves through the following stages:
+
+<Steps>
+  <Step title="Create in the Composer">
+    Click **New Post** in the sidebar to open the **Composer**. Upload one or more MP4 or MOV files, select the connected accounts you want to reach, write your captions, set thumbnails, and configure any platform-specific settings. The Composer persists your work locally so your draft survives a browser refresh.
+  </Step>
+  <Step title="Choose a publish mode">
+    At the bottom of the Composer, pick how you want to proceed:
+
+    - **Publish now** — Hivra fans the job out to every selected platform immediately.
+    - **Schedule** — Pick a date and time; the job enters **Scheduled** state and publishes automatically when the time arrives.
+    - **Submit for approval** — The job enters **Awaiting approval** state and waits for an Owner or Admin to review it before anything is sent to a platform. This mode is available on the Business plan only.
+  </Step>
+  <Step title="Track progress in the Library">
+    The **Library** is your command center for every publish job. Filter by tab — **Drafts**, **Scheduled**, **Approvals**, **Published**, and others — to find exactly what you need. Each card shows the job's current status, the target platforms, and quick actions.
+  </Step>
+  <Step title="Confirm live posts">
+    Once a job completes successfully, its status changes to **Published** and each platform chip on the Library card becomes a clickable link to the live post. If one platform fails while others succeed, the job shows **Partial** and you can retry the failing platforms individually.
+  </Step>
+</Steps>
+
+## Key statuses
+
+| Status | What it means |
+|---|---|
+| **Draft** | Saved in the Composer but not yet scheduled or submitted. |
+| **Scheduled** | A future publish time is set; Hivra will publish automatically. |
+| **Queued / Publishing** | The job is in the publish queue or actively being sent to platforms. |
+| **Published** | Successfully live on all selected platforms. |
+| **Partial** | Live on some platforms; one or more platforms failed. |
+| **Failed** | The publish attempt did not complete on any platform. |
+| **Awaiting approval** | Held for an Owner or Admin to approve before publishing. |
+
+For a full explanation of every status and what to do when things go wrong, see [Publish job statuses](/publishing/statuses).
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Composer" href="/publishing/composer" icon="pen-to-square">
+    Upload video, write captions, pick platforms, and choose your publish mode.
+  </Card>
+  <Card title="Scheduling" href="/publishing/scheduling" icon="calendar">
+    Set a future publish time and let Hivra handle automatic cross-posting.
+  </Card>
+  <Card title="Bulk upload" href="/publishing/bulk-upload" icon="layer-group">
+    Drop multiple video files in one session and publish them as separate jobs.
+  </Card>
+  <Card title="Approvals" href="/publishing/approvals" icon="circle-check">
+    Require human sign-off before any post goes live (Business plan).
+  </Card>
+</CardGroup>

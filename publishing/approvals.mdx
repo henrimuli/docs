@@ -1,0 +1,73 @@
+---
+title: "Approval Workflows: Require Sign-Off Before Publishing"
+description: "On the Business plan, require an Owner or Admin to approve every post before it goes live. Learn how to submit, review, approve, and reject publish jobs."
+---
+
+The approvals workflow adds a human gate between a team member's **Submit for approval** action and the moment Hivra calls a platform's publishing API. When a Member submits a job for approval, the video and its captions sit in **Awaiting approval** state — nothing is sent to any platform — until an Owner or Admin reviews and approves it.
+
+<Warning>
+  The approvals workflow is available on the **Business plan** only. Members on Free or Creator plan workspaces publish or schedule directly without an approval step. Upgrade to Business to enable approval gating for your team. Business plan includes 5 workspaces and 5 seats at $30/month.
+</Warning>
+
+## Prerequisites and roles
+
+Three role types interact with the approvals workflow:
+
+| Role | Can approve? | Can submit for approval? | Can publish without approval? |
+|---|---|---|---|
+| **Owner** | Yes | N/A — always has full publishing rights | Yes |
+| **Admin** | Yes (if granted by Owner) | N/A — typically has full rights | Yes |
+| **Member** | No | Yes | Depends on their invite setting |
+
+When you invite a Member to a Business workspace, you choose their publishing permission: **Full posting** (they can publish or schedule directly) or **Requires approval** (every publish or schedule action becomes a submission that an Owner or Admin must review).
+
+For a full breakdown of roles and how to configure them, see [Team roles](/team/roles).
+
+## The submission flow
+
+<Steps>
+  <Step title="Member opens the Composer">
+    The Member clicks **New Post**, uploads video, selects connected accounts, writes captions, and configures platform settings — exactly the same as a normal publish flow.
+  </Step>
+  <Step title="Member clicks Submit for approval">
+    Instead of **Publish now** or **Schedule**, the Member clicks **Submit for approval**. The job is saved and its status changes to **Awaiting approval** in the Library. Platform chips on the Library card appear greyed out, indicating that nothing has been sent yet.
+  </Step>
+  <Step title="Approvers are notified">
+    Owners and Admins who have approval email notifications enabled receive an email prompting them to review the submission. In-app indicators in the **Library** also highlight jobs in **Awaiting approval** state under the **Approvals** tab.
+  </Step>
+  <Step title="Approver reviews the job">
+    The approver opens the Library card to see the video, captions, selected platforms, and any context the Member included. If changes are needed, the approver can add a **Job note** — a threaded comment attached to the publish job — to explain what needs to be revised before re-submitting.
+  </Step>
+  <Step title="Approver approves or rejects">
+    - **Approve** — The job immediately enters the normal publish queue. If the Member had set a scheduled time, the job publishes at that time. If no time was set, it publishes immediately.
+    - **Reject** — The job returns to **Draft** state. The Member can read the rejection feedback in the job notes, make edits in the Composer, and submit again.
+  </Step>
+</Steps>
+
+## Job notes for async feedback
+
+Job notes are threaded comments attached to a publish job. Approvers use them to leave specific feedback — flagging a caption that needs rewording, noting a missing disclosure toggle, or approving with conditions. Members can read notes and reply without leaving the Library.
+
+<Tip>
+  Treat job notes as the canonical feedback channel for publishing decisions. Keeping feedback in the job record means the full context stays with the post, rather than scattered across chat messages or emails.
+</Tip>
+
+## Email notifications
+
+Approvers receive email notifications when a new job is submitted for their review. The email includes a direct link to the Library card so they can approve or reject without navigating manually. To configure which email address receives approval notifications, visit your workspace notification settings.
+
+Members who submitted a job receive an email when the job is approved or rejected, so they know when to act.
+
+<Note>
+  Email notifications for approvals are configurable per user. If you are an approver and are not receiving emails, check your notification preferences in the workspace settings to make sure approval emails are turned on.
+</Note>
+
+## What happens after approval
+
+Once a job is approved:
+
+- It enters the normal publish queue and Hivra begins calling each selected platform's API.
+- The job status progresses from **Awaiting approval** to **Queued / Publishing** to **Published** (or **Partial** / **Failed** if a platform rejects the video).
+- The Library card updates in real time so the Member and approver can both track progress.
+
+Rejected jobs revert to **Draft** and the Member is notified. The job does not leave the Library — it stays available for the Member to reopen, revise, and resubmit.

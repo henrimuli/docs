@@ -1,0 +1,96 @@
+---
+title: "Analytics Overview: Track Cross-Platform Video Performance"
+description: "See views, likes, comments, shares, audience demographics, and your Hivra Score across every connected platform — all in one Analytics dashboard."
+---
+
+The **Analytics** section gives you a unified view of how your content performs across every platform you publish to. Rather than checking each platform's native dashboard separately, you can compare metrics, spot trends, and understand your audience in one place. Analytics is available on the Creator plan and above.
+
+## Tabs: Overview vs Post Performance
+
+The Analytics screen has two main tabs:
+
+<Tabs>
+  <Tab title="Overview">
+    The **Overview** tab shows aggregate performance for the selected accounts and date range. Use it to understand your overall reach, engagement totals, follower growth, and the Hivra Score gauge for the period.
+  </Tab>
+  <Tab title="Post Performance">
+    The **Post Performance** tab breaks metrics down by individual post so you can compare which content drove the most engagement. Each row shows the post thumbnail, platforms it was published to, and per-metric values.
+  </Tab>
+</Tabs>
+
+## Selecting a date range
+
+Use the date range picker at the top of **Analytics** to control the reporting window. Available presets include:
+
+| Preset | What it covers |
+|---|---|
+| Last 7 days | Rolling 7-day window ending today |
+| Last 28 days | Rolling 28-day window ending today |
+| Last 90 days | Rolling 90-day window ending today |
+| Last 12 months | Rolling 12-month window ending today |
+
+<Tip>
+  The 28-day preset is a useful baseline for comparing month-over-month trends because it avoids the variable day count in calendar months.
+</Tip>
+
+## Switching between connected accounts
+
+The account selector lets you filter analytics to one or more connected accounts. Select individual accounts to isolate performance for a specific platform, or select all accounts to see blended totals across your workspace.
+
+<Note>
+  Metrics are sourced from each platform's official insights API. If a connected account has lost its OAuth token or the platform's API is unavailable, that account's metrics may be missing. See the coverage hints in the UI for status details.
+</Note>
+
+## Key metrics and KPIs
+
+The metrics available vary by platform. The following table shows what Hivra surfaces:
+
+| Metric | Platforms |
+|---|---|
+| Video views | TikTok, Instagram, YouTube, Facebook |
+| Impressions | TikTok, Instagram, YouTube, Facebook, X |
+| Watch time | YouTube (shown in minutes) |
+| Likes | TikTok, Instagram, YouTube, Facebook, X, Threads |
+| Comments | TikTok, Instagram, YouTube, Facebook, X, Threads |
+| Shares | TikTok, Instagram, Facebook, X |
+| Saves | Instagram |
+| Followers / audience growth | TikTok, Instagram, YouTube, Facebook, X, Threads |
+| Reach | Instagram (when API returns it) |
+
+<Warning>
+  Hivra never fabricates blended reach across networks that hide the stat. If a metric tile shows "—", it means the platform API did not return data for that account and date range — not that the metric is zero.
+</Warning>
+
+### Engagements roll-up
+
+The **Engagements** KPI tile combines likes, comments, shares, and saves into a single composite number. Hover the tile to see a tooltip listing which platforms contributed to the total for the active date range. TikTok likes are also shown on their own dedicated tile because they are often tracked independently.
+
+## Audience demographics charts
+
+The **Analytics** overview includes audience demographic breakdowns sourced from each platform's insights API, including:
+
+- **Age & gender** — percentage breakdown of your audience by age group and gender identity, where platforms expose this data.
+- **Top locations** — countries or regions where your audience is concentrated.
+
+<Note>
+  Demographic data is not available for all platforms or all account sizes. Platforms may require minimum follower or view thresholds before exposing demographic insights via their API.
+</Note>
+
+## Hivra Score
+
+The **Hivra Score** is a 0–100 gauge that distils four signals into a single number:
+
+- **Reach** — how many unique viewers your content is reaching
+- **Engagement velocity** — how quickly likes, comments, and shares accumulate
+- **Audience growth** — net follower change over the period
+- **Publishing consistency** — how regularly you are publishing across platforms
+
+The score is diagnostic: use it to compare performance week over week or after a content strategy change. It is not a monetisation metric or a guarantee of algorithmic reach.
+
+## Exporting analytics data
+
+To download your analytics data as a CSV file, see [Export analytics data](/analytics/export).
+
+## Plan requirement
+
+**Analytics** requires a Creator plan or higher. Free plan users can see the Analytics section but will be prompted to upgrade to unlock full metric access.

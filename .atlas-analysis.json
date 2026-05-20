@@ -1,0 +1,97 @@
+{
+  "projectType": "saas",
+  "projectName": "Hivra",
+  "projectDescription": "Hivra is a video publishing engine that lets content creators upload once and cross-post to TikTok, Instagram, YouTube, Facebook, X, and Threads — with scheduling, engagement, and analytics in one dashboard.",
+  "theme": "almond",
+  "primaryColor": "#d89738",
+  "lightColor": "#a45c34",
+  "darkColor": "#fbd959",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "create-account",
+              "workspaces"
+            ]
+          },
+          {
+            "group": "Publishing",
+            "pages": [
+              "publishing/overview",
+              "publishing/composer",
+              "publishing/scheduling",
+              "publishing/bulk-upload",
+              "publishing/approvals",
+              "publishing/statuses"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/instagram",
+              "integrations/tiktok",
+              "integrations/youtube",
+              "integrations/facebook",
+              "integrations/x-twitter",
+              "integrations/threads"
+            ]
+          },
+          {
+            "group": "Engagement & Analytics",
+            "pages": [
+              "engagement/overview",
+              "analytics/overview",
+              "analytics/export"
+            ]
+          },
+          {
+            "group": "Team & Account",
+            "pages": [
+              "team/roles",
+              "team/invite-members",
+              "account/plans",
+              "account/settings"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/publishing",
+              "troubleshooting/connections",
+              "troubleshooting/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Cross-post videos to TikTok, Instagram, YouTube, Facebook, X, and Threads from one upload",
+    "Bulk upload and schedule multiple videos across all connected platforms",
+    "Unified engagement inbox to read and reply to comments across platforms",
+    "Cross-platform analytics with CSV export on paid plans",
+    "Publishing approvals workflow for teams and agencies (Business plan)",
+    "Per-platform caption and thumbnail customization in the Composer",
+    "Workspaces to separate brands, clients, or projects",
+    "Team collaboration with Owner, Admin, and Member roles"
+  ],
+  "publicApiSurface": [
+    "Dashboard Overview — publishing pipeline snapshot, integration health",
+    "Composer — upload media, set captions/thumbnails per platform, publish or schedule",
+    "Library — manage drafts, scheduled posts, approvals, published jobs",
+    "Calendar — editorial view of scheduled content across accounts",
+    "Engagement — unified inbox to read and reply to comments",
+    "Analytics — cross-platform performance metrics, CSV export",
+    "Integrations — connect/disconnect YouTube, Instagram, TikTok, Facebook, X, Threads via OAuth",
+    "Workspaces — create, switch, and manage separate workspaces",
+    "Team Management — invite members, assign roles (Owner/Admin/Member), set publishing approval requirements",
+    "Plans — Free, Creator ($15/mo), Business ($30/mo) with add-on workspaces and seats"
+  ]
+}
