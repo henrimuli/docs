@@ -24,9 +24,8 @@
             "group": "Get Started",
             "pages": [
               "introduction",
-              "quickstart",
               "create-account",
-              "workspaces"
+              "quickstart"
             ],
             "icon": "rocket-launch"
           },
@@ -39,7 +38,8 @@
               "publishing/bulk-upload",
               "publishing/approvals",
               "publishing/statuses"
-            ]
+            ],
+            "icon": "upload"
           },
           {
             "group": "Integrations",
@@ -51,7 +51,8 @@
               "integrations/facebook",
               "integrations/x-twitter",
               "integrations/threads"
-            ]
+            ],
+            "icon": "link"
           },
           {
             "group": "Engagement & Analytics",
@@ -59,16 +60,19 @@
               "engagement/overview",
               "analytics/overview",
               "analytics/export"
-            ]
+            ],
+            "icon": "message-dots"
           },
           {
-            "group": "Team & Account",
+            "group": "Teams & Collaboration",
             "pages": [
               "team/roles",
               "team/invite-members",
+              "workspaces",
               "account/plans",
               "account/settings"
-            ]
+            ],
+            "icon": "user-group"
           },
           {
             "group": "Troubleshooting",
@@ -76,7 +80,8 @@
               "troubleshooting/publishing",
               "troubleshooting/connections",
               "troubleshooting/faq"
-            ]
+            ],
+            "icon": "memo-circle-info"
           }
         ]
       }

@@ -1,8 +1,3 @@
----
-title: "Fix Account Connection and OAuth Issues in Hivra"
-description: "Resolve OAuth redirect loops, Attention health states, Meta token behavior, missing accounts, and safe disconnect sequences for connected platforms."
----
-
 Connected accounts are the foundation of cross-posting in Hivra. When a connection breaks or behaves unexpectedly, publishing stops until it's restored. The sections below cover the most common connection problems and exactly how to resolve each one.
 
 <AccordionGroup>
@@ -38,6 +33,7 @@ Connected accounts are the foundation of cross-posting in Hivra. When a connecti
     When a connected account displays an **Attention** health state in **Integrations**, it means Hivra's access token for that account has expired or been revoked by the platform. Hivra cannot publish to or fetch data from that account until the token is refreshed.
 
     **What triggers Attention:**
+
     - The platform rotated or invalidated the token (common after password changes or security reviews)
     - You revoked Hivra's access from the platform's own app settings
     - The token reached its maximum lifetime (platform-dependent)
@@ -103,12 +99,14 @@ Connected accounts are the foundation of cross-posting in Hivra. When a connecti
     Before disconnecting an account, it helps to know what Hivra retains and what it removes.
 
     **When you disconnect an account:**
+
     - Posts already published through Hivra remain live on the platform — disconnecting does not delete anything on the network side.
     - Scheduled posts in your **Library** that target the disconnected account will fail to publish at their scheduled time.
     - Analytics history already fetched for that account may be retained in your workspace, but new data will stop syncing.
     - The account is removed from the Composer's destination picker immediately.
 
     **When you reconnect an account:**
+
     - Hivra re-establishes API access and resumes syncing data.
     - Previously scheduled posts that targeted this account do not automatically resume — open them in the **Composer** and reschedule.
     - Analytics will resume syncing from the point of reconnection. Historical data from the disconnection window may not be back-filled, depending on platform API limitations.

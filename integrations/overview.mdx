@@ -1,6 +1,7 @@
 ---
 title: "Integrations: Connect Your Social Accounts to Hivra"
 description: "Link Instagram, TikTok, YouTube, Facebook, X, and Threads to Hivra via OAuth so you can upload once and cross-post everywhere from a single Composer."
+sidebarTitle: "Connect Your Accounts"
 ---
 
 Hivra connects to your social accounts through each platform's official OAuth flow. You authorize Hivra once per account, and Hivra stores an access token that lets it publish on your behalf — you never share your password. This page explains how every connection works, what the health states mean, and when to reconnect or disconnect an account.
@@ -30,18 +31,23 @@ Every platform follows the same four-step flow regardless of which tile you choo
   <Card title="Instagram" icon="instagram" href="/integrations/instagram">
     Share Reels and Stories to your Instagram professional or creator account.
   </Card>
+
   <Card title="TikTok" icon="tiktok" href="/integrations/tiktok">
     Publish videos directly to your TikTok profile with privacy and disclosure controls.
   </Card>
+
   <Card title="YouTube" icon="youtube" href="/integrations/youtube">
     Upload Shorts and long-form videos to your YouTube channel with playlist and privacy settings.
   </Card>
+
   <Card title="Facebook" icon="facebook" href="/integrations/facebook">
     Post Reels and videos to your Facebook Page.
   </Card>
+
   <Card title="X" icon="x-twitter" href="/integrations/x-twitter">
     Share video clips and tweet text to your X timeline.
   </Card>
+
   <Card title="Threads" icon="threads" href="/integrations/threads">
     Publish content to your Threads profile with reply audience controls.
   </Card>
@@ -52,7 +58,7 @@ Every platform follows the same four-step flow regardless of which tile you choo
 Each integration card displays a health chip that updates after every monitoring cycle.
 
 | State | Meaning |
-|---|---|
+| --- | --- |
 | **Healthy** | The stored token is valid and Hivra can publish to this account. |
 | **Attention** | The token has expired or been revoked. Scheduled posts to this account will fail until you reconnect. |
 
@@ -81,14 +87,17 @@ Instagram, Facebook Pages, and Threads are all Meta products that share the same
   <Accordion title="OAuth redirect loop or blank screen after authorization">
     Browser extensions — particularly ad blockers and privacy shields — can intercept the OAuth redirect. Try connecting in a fresh browser window with extensions disabled, or use a private/incognito window.
   </Accordion>
+
   <Accordion title="Connection card shows Attention immediately after authorizing">
     Confirm you accepted every permission on the platform's authorization page. If you dismissed any scope, disconnect the partial connection and restart the flow, accepting all scopes this time.
   </Accordion>
+
   <Accordion title="Wrong workspace is connected">
     Use the sidebar switcher to verify you are inside the correct workspace before starting the OAuth flow. Tokens are scoped to the workspace that was active when you authorized.
   </Accordion>
+
   <Accordion title="Still failing after multiple attempts">
-    Copy the URL from your browser's address bar immediately after the redirect completes, note the timestamp, and email both to support@hivra.app. The support team can correlate the URL parameters with server-side ingestion logs to diagnose the failure.
+    Copy the URL from your browser's address bar immediately after the redirect completes, note the timestamp, and email both to [support@hivra.app](mailto:support@hivra.app). The support team can correlate the URL parameters with server-side ingestion logs to diagnose the failure.
   </Accordion>
 </AccordionGroup>
 
