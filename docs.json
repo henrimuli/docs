@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Hivra Help Center",
-  "theme": "mint",
+  "theme": "maple",
   "favicon": "https://hivra.app/logo_icon.png",
   "colors": {
     "primary": "#d89738",
