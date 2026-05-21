@@ -1,0 +1,135 @@
+---
+title: "Per-file composer context: edit each clip independently"
+description: "When you upload multiple files in one Composer session, each file gets its own caption, first comment, and platform settings. Learn how the active file works and how to switch between files from the media queue."
+sidebarTitle: "Per-file editing"
+---
+
+When you drop more than one file into the Composer, Hivra treats every clip as an **independent post**. The Composer keeps a separate caption, first comment, per-platform caption overrides, per-platform first‑comment overrides, and per‑platform publish settings for each file in the session — nothing is shared between files except the list of connected accounts you selected at the start.
+
+The clip you are currently editing is called the **active file**, and you switch the active file from the **Media queue** row underneath the thumbnail rail.
+
+<Frame>
+  ![Media Queue](/images/media_queue.jpg)
+</Frame>
+
+## What is stored per file
+
+Every file in the session has its own slot for the following:
+
+| Setting | Scope |
+| --- | --- |
+| Caption (baseline) | Per file |
+| Per-platform caption override | Per file, per connected account |
+| First comment (baseline) | Per file |
+| Per-platform first-comment override | Per file, per connected account |
+| TikTok publish settings (visibility, comments, duet, stitch, disclosure) | Per file |
+| YouTube publish settings (title, visibility, made‑for‑kids, playlists) | Per file |
+| Instagram publish settings (collaborators, tagged users) | Per file |
+| Facebook publish settings (Reel vs Story) | Per file |
+| Threads publish settings (reply audience) | Per file |
+| X publish settings (reply controls) | Per file |
+| Selected thumbnail frame or custom cover | Per file |
+| Selected accounts | Per file (falls back to your session selection until you change it) |
+
+When you switch the active file, every field in the composer — the caption box, the **Customize caption per platform** tiles, the **Customize first comment per platform** tiles, and the platform settings modals — re‑renders to show that file's values. Editing them updates only that file.
+
+<Note>
+  The shared things in a Composer session are: the list of connected accounts you toggled on in **Posting To**, the publish mode you ultimately pick, and the upload dock's overall progress. Everything inside the composer body is scoped to the active file.
+</Note>
+
+## The Media queue row
+
+The Media queue is the horizontal strip of thumbnails directly under the Thumbnail Selection rail on the left side of the Composer. Each tile in the row represents one file you uploaded in the current session.
+
+- The **active file** is the tile with the gold ring.
+- Other tiles show the file's frame (or your saved cover, if you chose one) and the file name on hover.
+- Use the chevron buttons on either end of the row to scroll when you have more files than fit on screen.
+
+### Switching the active file
+
+To change which file you are editing, **click any tile in the Media queue**. The gold ring moves to that tile, and the composer body updates instantly:
+
+1. The caption box loads that file's caption.
+2. The per‑platform caption tiles show the overrides you set for that file (or fall back to its baseline caption).
+3. The first comment field and per‑platform first‑comment tiles load that file's values.
+4. Opening a platform settings modal (TikTok, YouTube, Instagram, Facebook, Threads, X) shows the settings you saved for that file on that account — not what you set on a sibling clip.
+5. The thumbnail picker above the Media queue switches to that file's frame timeline and custom cover.
+
+<Tip>
+  The Media queue's tooltip in the Composer summarises this: "The clip highlighted in the media queue has its own caption and per‑platform edits. Switch the gold‑ring tile to work on another file."
+</Tip>
+
+### What does _not_ change when you switch files
+
+- Your **connected account selection** in the **Posting To** tiles is shared across the session by default. If you turn off an account for one file, Hivra removes it from that file's targets only — other files keep their existing selection.
+- The **upload dock** at the bottom continues to show overall transcode and upload progress for every file in the session, regardless of which file is active.
+
+## Editing a caption for one file only
+
+<Steps>
+  <Step title="Select the file in the Media queue">
+    Click the tile for the clip you want to caption. The gold ring confirms it is now the active file.
+  </Step>
+  <Step title="Type the baseline caption">
+    Use the main caption box. What you type is saved against this file only. Switching to another tile and back will restore exactly what you typed.
+  </Step>
+  <Step title="(Optional) Override per platform">
+    Under **Customize caption per platform**, click any account tile to open the per‑platform caption modal. The override you save applies to this file and that one account — other files and other accounts are not affected.
+  </Step>
+</Steps>
+
+## Setting a first comment for one file only
+
+<Steps>
+  <Step title="Make the file active">
+    Click its tile in the Media queue.
+  </Step>
+  <Step title="Write the baseline first comment">
+    Use the first‑comment field. It is saved per file, just like the caption.
+  </Step>
+  <Step title="(Optional) Override per platform">
+    Under **Customize first comment per platform**, click an account tile to set a first comment that only applies on that account for this file.
+  </Step>
+</Steps>
+
+<Info>
+  TikTok does not support a first comment via API, so TikTok accounts do not appear in the per‑platform first‑comment tiles. You can still set a TikTok caption per file.
+</Info>
+
+## Adjusting platform settings for one file only
+
+Platform settings modals — TikTok visibility, YouTube title and playlists, Instagram collaborators, Facebook Reel vs Story, Threads reply audience, X reply controls — are also stored per file, per account.
+
+<Steps>
+  <Step title="Make the file active">
+    Click its tile in the Media queue.
+  </Step>
+  <Step title="Open the platform settings modal">
+    Go to the settings step by clicking **Next** from the caption step, then click the platform's row to configure settings.
+  </Step>
+  <Step title="Save">
+    The settings are stored against this file and this account. Switching to another file shows that file's saved settings, even on the same account.
+  </Step>
+</Steps>
+
+<Warning>
+  If you change a setting that affects eligibility (for example, a YouTube title longer than 100 characters, or a TikTok video longer than the account's allowed length), the warning shows for the active file only. Each file is validated separately when you publish.
+</Warning>
+
+## Removing a file from the session
+
+Hover the file's tile in the media queue (the bottom left row containing uploading files) and click the remove control. The file is dropped from the session, along with every caption, first comment, override, and platform setting you saved against it. Other files in the queue are untouched.
+
+<Note>
+  If the file was already uploaded and you remove it after publishing or scheduling, the corresponding Library job is unaffected — removal only clears the in‑Composer state for the current session.
+</Note>
+
+## How this works during draft restore
+
+When you reopen a draft from the **Library**, Hivra restores every per‑file value — captions, first comments, per‑platform overrides, platform settings, and the selected cover frame — keyed back to the original file. The first file in the restored queue becomes the active file by default. Switching tiles in the Media queue swaps the composer body to that file's restored state, exactly as if you had never closed the session.
+
+## Related
+
+- [Using the Composer](/publishing/composer)
+- [Bulk uploads](/publishing/bulk-upload)
+- [Scheduling posts](/publishing/scheduling)
