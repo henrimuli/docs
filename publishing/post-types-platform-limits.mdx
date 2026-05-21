@@ -1,0 +1,184 @@
+---
+title: "Post types and platform limits in the Composer"
+sidebarTitle: "Supported Post Types"
+description: "Which post types each platform accepts, what Hivra does when they don't match, and how to fix deselected accounts."
+---
+
+Hivra is built around one upload, many platforms — but each network's API only allows certain formats. YouTube expects video. Instagram won't accept plain text. TikTok has no API path for text-only posts. When you choose media that a platform can't accept, Hivra steps in automatically so you never accidentally publish the wrong format to the wrong destination.
+
+This article explains the three post types in the Composer and how Hivra protects you by deselecting incompatible accounts. Deselected accounts can always be re-selected after you fix or swap your media.
+
+## The three post types
+
+- **Video posts** — The default path. Upload an MP4 or MOV file, write your captions, set a thumbnail, configure per-platform settings, then publish or schedule. Supported on all six platforms.
+- **Image posts** — Upload a single JPG, PNG, or WebP file. Published where APIs allow — not YouTube. TikTok publishes it as a photo post; Instagram publishes it through the Reels/media API.
+- **Text-only posts** — No media attached. Select **Text Only** at the media step. Caption is required. Only Facebook Page, X, and Threads support text-only posts.
+
+<Tip>
+  Video is the primary workflow in Hivra. Image and text-only modes are for campaigns where you don't need a clip on every network — for example, an announcement post on Facebook, X, and Threads alongside a video on the others.
+</Tip>
+
+## Which platforms accept each post type?
+
+| Platform | Video | Image | Text-only | Notes |
+| --- | --- | --- | --- | --- |
+| **YouTube** | ✓ | ✗ | ✗ | Shorts-style (composer cap: 3 min). Image or text posts auto-remove YouTube. |
+| **Instagram** | ✓ Reels | ✓ | ✗ | Images publish via the Reels/media API. Optional Share to Story on video only. |
+| **TikTok** | ✓ | ✓ Photo post | ✗ | Max duration up to 10 min, may be lower depending on account settings. |
+| **Facebook Page** | ✓ | ✓ | ✓ | Text cannot use Share to Story. Video and image can include a Story companion. |
+| **X** | ✓ | ✓ | ✓ | — |
+| **Threads** | ✓ | ✓ | ✓ | Carousel exists in the API but is not yet supported in the Composer. |
+
+<Note>
+  Instagram image posts appear to followers as a standard image post, but they are published through the same Reels/media API path — not a separate static-feed-only endpoint.
+</Note>
+
+## What Hivra does automatically
+
+When you add media (or choose **Text Only**), Hivra checks each selected platform for compatibility and deselects any that can't receive the post.
+
+<Steps>
+  <Step title="You pick destinations in Posting To">
+    Toggle the account tiles for the platforms you want to reach.
+  </Step>
+  <Step title="You add media or choose Text Only">
+    Drop a video or image file, or click **Text Only** at the media step to create a post with no attachment.
+  </Step>
+  <Step title="Hivra checks compatibility">
+    The Composer evaluates post type and, for video, duration — against each selected platform's limits.
+  </Step>
+  <Step title="Incompatible platforms are deselected and a modal explains why">
+    Affected accounts are removed from **Posting To** and a modal appears with the reason. Re-select any account after fixing the issue.
+  </Step>
+</Steps>
+
+**Modal types you may see:**
+
+- **Platform limits** — Appears when a video exceeds a platform's duration cap, or when an image post removes YouTube.
+- **Text-only post** — Appears when you choose **Text Only**; lists the platforms that were removed (YouTube, Instagram, TikTok).
+
+<Note>
+  In a bulk session, deselection is evaluated per clip. Switching to a different clip in the upload dock can change which accounts remain selected, because each file may have a different duration.
+</Note>
+
+## Video posts
+
+Video is the default and most fully featured post type in Hivra. Drop one or more MP4 or MOV files into the Composer — they queue in the upload dock at the bottom left of the screen. While files transcode, you can write captions and configure platform settings.
+
+### Duration limits per platform
+
+Hivra enforces a maximum duration at the Composer level. Videos that exceed a platform's cap cause that platform to be auto-deselected with a **Platform limits** modal.
+
+| Platform | Composer max duration |
+| --- | --- |
+| **YouTube** | 3 minutes |
+| **Instagram** | 15 minutes |
+| **TikTok** | Up to 10 minutes (or account-specific limit from TikTok settings) |
+| **X** | 2 minutes 20 seconds |
+| **Threads** | 5 minutes |
+| **Facebook** | No composer block — very long videos are allowed |
+
+<Note>
+  YouTube in Hivra uses the Shorts-style publishing path. The 3-minute cap reflects this. For more on YouTube title, playlist, and privacy settings, see [Connect YouTube](/integrations/youtube).
+</Note>
+
+### Thumbnails
+
+Thumbnail selection is available for video posts only. You can let Hivra use the first frame, scrub the timeline to pick a specific frame, or upload a custom image. The selected thumbnail is used across all platforms that support custom thumbnails.
+
+### Story companion
+
+Facebook and Instagram offer an optional **Share to Story** toggle within their platform drawers. This option is available for video and image posts only — not text-only.
+
+## Image posts
+
+To publish an image, drop a JPG, PNG, or WebP file into the Composer upload area. The flow is the same as video — select platforms, write captions, publish or schedule.
+
+**What to expect per platform:**
+
+- **YouTube** — Auto-removed immediately. YouTube does not allow image posting via their API. A **Platform limits** modal confirms this.
+- **TikTok** — Publishes as a TikTok photo post.
+- **Instagram** — Publishes as an image post through the Reels/media API.
+- **Facebook, X, Threads** — Standard image post.
+
+## Text-only posts
+
+Text-only posts let you cross-post written content to Facebook Page, X, and Threads without any media attachment.
+
+**How to create one:**
+
+1. Open the Composer and select your destinations.
+2. At the media step, click **Text Only** instead of uploading a file.
+3. Write your caption — it's required. You'll see an error if you try to publish without one: _"Add post text before publishing a text-only post."_
+4. Publish, schedule, or submit for approval.
+
+**Platform support:**
+
+- ✓ Facebook Page, X, Threads
+- ✗ YouTube, Instagram, TikTok — auto-removed when you choose Text Only
+
+<Note>
+  On Facebook, enabling **Share to Story** on a text-only post will cause an API error. The Story companion is available for video and image posts only.
+</Note>
+
+## First comment
+
+The first comment field in the Composer lets you schedule a comment to be posted immediately after your content goes live — useful for adding hashtags, links, or extra context without cluttering the caption.
+
+First comment is supported on **Facebook, Instagram, YouTube, X, and Threads**. It is **not supported on TikTok** — the TikTok API does not allow posting a first comment via Hivra.
+
+| Platform | First comment character limit |
+| --- | --- |
+| Facebook | 8,000 |
+| YouTube | 5,000 |
+| Instagram | 2,200 |
+| X | 280 |
+| Threads | 500 |
+
+## Common scenarios
+
+| Scenario | Guidance |
+| --- | --- |
+| Cross-post a Short everywhere | Video \+ all six platforms — watch the duration caps, especially YouTube (3 min) and X (2:20). |
+| Announcement without video | Text Only → select Facebook, X, and Threads. |
+| Photo on Instagram \+ TikTok, not YouTube | Image post — YouTube will be auto-removed as expected. |
+| 5-minute clip to YouTube \+ X | YouTube will be deselected (3 min cap); X will be deselected (2:20 cap). Publish to Facebook, Instagram, and TikTok, or trim the video. |
+| Bulk queue of clips | Each file becomes its own publish job. Duration checks run per file — a long clip may deselect platforms that a shorter clip keeps. |
+
+## If a platform was deselected or a publish failed
+
+- **Deselected during compose** — Fix the issue (shorten the video, swap post type, or change platforms) then re-select the account in **Posting To**.
+- **Partial publish** — If some platforms succeeded and others failed, the Library card shows **Partial** with per-platform status. Use the retry action on the failing platforms individually.
+- **Platform rejected the upload** — Usually a codec or file size issue. Check the file against platform specs.
+
+For a full breakdown of every error state, see [Troubleshooting Publishing](/troubleshooting/publishing) and [Publish job statuses](/publishing/statuses).
+
+## Limits and roadmap
+
+The following are not currently supported in the Composer:
+
+- Threads carousel posts
+- TikTok first comment (API limitation)
+- YouTube long-form as a mode distinct from Shorts in Composer duration logic
+- Multi-image / carousel posts on any network
+- Publishing to personal Facebook profiles (Facebook Pages only)
+
+## Related articles
+
+<CardGroup cols={2}>
+  <Card title="Using the Composer" icon="pen-to-square" href="/publishing/composer">
+    Full walkthrough of the Composer — captions, thumbnails, platform settings, and publish modes.
+  </Card>
+
+  <Card title="Scheduling Posts" icon="calendar" href="/publishing/scheduling">
+    Set a future publish time and let Hivra handle automatic cross-posting.
+  </Card>
+
+  <Card title="Bulk Upload" icon="layer-group" href="/publishing/bulk-upload">
+    Drop multiple files in one session — each becomes its own publish job.
+  </Card>
+
+  <Card title="Publish Job Statuses" icon="circle-check" href="/publishing/statuses">
+    Every Library status explained, and what to do when something goes wrong.
+  </Card>
+</CardGroup>
