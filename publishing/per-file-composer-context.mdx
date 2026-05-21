@@ -9,7 +9,7 @@ When you drop more than one file into the Composer, Hivra treats every clip as a
 The clip you are currently editing is called the **active file**, and you switch the active file from the **Media queue** row underneath the thumbnail rail.
 
 <Frame>
-  ![The Media queue row sits underneath the Thumbnail Selection rail. The clip with the gold ring is the active file.](/images/media-queue.jpg)
+  ![Media Queue](/images/media_queue.jpg)
 </Frame>
 
 ## What is stored per file
@@ -22,12 +22,12 @@ Every file in the session has its own slot for the following:
 | Per-platform caption override | Per file, per connected account |
 | First comment (baseline) | Per file |
 | Per-platform first-comment override | Per file, per connected account |
-| TikTok publish settings (visibility, comments, duet, stitch, disclosure) | Per file, per TikTok account |
-| YouTube publish settings (title, visibility, made‑for‑kids, playlists) | Per file, per YouTube channel |
-| Instagram publish settings (collaborators, tagged users) | Per file, per Instagram account |
-| Facebook publish settings (Reel vs Story) | Per file, per Page |
-| Threads publish settings (reply audience) | Per file, per Threads account |
-| X publish settings (reply controls) | Per file, per X account |
+| TikTok publish settings (visibility, comments, duet, stitch, disclosure) | Per file |
+| YouTube publish settings (title, visibility, made‑for‑kids, playlists) | Per file |
+| Instagram publish settings (collaborators, tagged users) | Per file |
+| Facebook publish settings (Reel vs Story) | Per file |
+| Threads publish settings (reply audience) | Per file |
+| X publish settings (reply controls) | Per file |
 | Selected thumbnail frame or custom cover | Per file |
 | Selected accounts | Per file (falls back to your session selection until you change it) |
 
@@ -59,7 +59,7 @@ To change which file you are editing, **click any tile in the Media queue**. The
   The Media queue's tooltip in the Composer summarises this: "The clip highlighted in the media queue has its own caption and per‑platform edits. Switch the gold‑ring tile to work on another file."
 </Tip>
 
-### What does *not* change when you switch files
+### What does _not_ change when you switch files
 
 - Your **connected account selection** in the **Posting To** tiles is shared across the session by default. If you turn off an account for one file, Hivra removes it from that file's targets only — other files keep their existing selection.
 - The **upload dock** at the bottom continues to show overall transcode and upload progress for every file in the session, regardless of which file is active.
@@ -105,7 +105,7 @@ Platform settings modals — TikTok visibility, YouTube title and playlists, Ins
     Click its tile in the Media queue.
   </Step>
   <Step title="Open the platform settings modal">
-    Click the account's tile in **Posting To** (or the gear icon for that account, depending on the platform).
+    Go to the settings step by clicking **Next** from the caption step, then click the platform's row to configure settings.
   </Step>
   <Step title="Save">
     The settings are stored against this file and this account. Switching to another file shows that file's saved settings, even on the same account.
@@ -118,7 +118,7 @@ Platform settings modals — TikTok visibility, YouTube title and playlists, Ins
 
 ## Removing a file from the session
 
-Hover the file's tile in the upload dock (the bottom progress strip) and click the remove control. The file is dropped from the session, along with every caption, first comment, override, and platform setting you saved against it. Other files in the queue are untouched.
+Hover the file's tile in the media queue (the bottom left row containing uploading files) and click the remove control. The file is dropped from the session, along with every caption, first comment, override, and platform setting you saved against it. Other files in the queue are untouched.
 
 <Note>
   If the file was already uploaded and you remove it after publishing or scheduling, the corresponding Library job is unaffected — removal only clears the in‑Composer state for the current session.
