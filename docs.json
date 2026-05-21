@@ -35,6 +35,7 @@
             "pages": [
               "publishing/overview",
               "publishing/composer",
+              "publishing/per-file-composer-context",
               "publishing/post-types-platform-limits",
               "publishing/scheduling",
               "publishing/bulk-upload",
