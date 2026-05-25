@@ -122,11 +122,11 @@
         "items": [
           {
             "label": "Features",
-            "href": "https://help.hivra.app/introduction"
+            "href": "https://hivra.app/"
           },
           {
             "label": "Pricing",
-            "href": "https://help.hivra.app/account/plans"
+            "href": "https://hivra.app/pricing"
           }
         ]
       },
