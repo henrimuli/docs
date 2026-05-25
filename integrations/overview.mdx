@@ -18,7 +18,7 @@ Every platform follows the same three-step flow regardless of which tile you cho
     When you click **Connect**, you're redirected to the platform's official authorization page. Accept all the permissions listed — these are the minimum scopes Hivra needs to publish. If you decline any scope, the callback lands in a soft-failure state and the connection will not complete.
   </Step>
   <Step title="Validate the connection card">
-    After the redirect returns you to Hivra, the integration card displays your profile picture, handle, and account ID. Within a few minutes, the monitoring job runs, and the status in the Integration Health section of the dashboard overview should read as **Healthy**.
+    After the redirect returns you to Hivra, the integration card displays your profile picture, handle, and account ID. Within a few minutes, the monitoring job runs, and the status in the Integration Health section of the dashboard overview should read as **Healthy**.
   </Step>
 </Steps>
 
@@ -62,7 +62,7 @@ Each integration card displays a health chip that updates after every monitoring
 
 ## When to reconnect vs disconnect
 
-- **Reconnect** when the health chip reads **Attention** or **Issue,** or you receive an email alert about a failed scheduled post. Reconnecting re-runs the OAuth flow and issues a fresh token without removing any of your existing drafts or publish history.
+- **Reconnect** when the health chip reads **Attention** or **Issue**, or you receive an email alert about a failed scheduled post. Reconnecting re-runs the OAuth flow and issues a fresh token without removing any of your existing drafts or publish history.
 - **Disconnect** when an account should stop receiving posts entirely. Content already published to the platform stays live, but Hivra will no longer target that account for new publishes.
 
 <Warning>
