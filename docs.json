@@ -114,7 +114,8 @@
   "footer": {
     "socials": {
       "facebook": "https://www.facebook.com/profile.php?id=61589679359309",
-      "instagram": "https://www.instagram.com/hivra.app"
+      "instagram": "https://www.instagram.com/hivra.app",
+      "youtube": "https://www.youtube.com/@hivra_app"
     },
     "links": [
       {
@@ -122,7 +123,7 @@
         "items": [
           {
             "label": "Features",
-            "href": "https://hivra.app/"
+            "href": "https://hivra.app/features/one-upload-every-platform"
           },
           {
             "label": "Pricing",
