@@ -61,6 +61,7 @@
             "group": "Engagement & Analytics",
             "pages": [
               "engagement/overview",
+              "engagement/inbox-population",
               "analytics/overview",
               "analytics/export"
             ],
