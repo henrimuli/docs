@@ -1,0 +1,109 @@
+---
+title: "How the Engagement inbox is populated"
+description: "Inside Hivra's standardized comment fetching: which posts are scanned, how far back, how many pages per post, and which comments are intentionally left out."
+sidebarTitle: "How comments are fetched"
+---
+
+The **Engagement inbox** is not a live mirror of every comment that has ever existed on your connected accounts. Hivra applies a single, standardized set of fetching constraints across every platform so the inbox stays focused on **recent, actionable activity** and stays within each platform's API quotas.
+
+This page documents exactly how the inbox is populated: which posts Hivra looks at, how many comment pages it pulls per post, how it handles replies, and what gets filtered out before anything reaches your screen.
+
+## The same rules apply to every platform
+
+Hivra uses one shared set of limits for Instagram, YouTube, Facebook, X (Twitter), and Threads. The exact platform API endpoints differ, but the *constraints* below are identical — so a fetch run produces a predictable, evenly‑weighted slice of activity across every connected account.
+
+<Note>
+  TikTok does not expose user‑written comments or replies through any public API, so TikTok‑only workspaces are skipped entirely. See [Engagement Inbox](/engagement/overview#tiktok-notes) for the latest status.
+</Note>
+
+## What Hivra fetches
+
+### 1. The 12 most recent top‑level posts per account
+
+For every connected account, Hivra picks the **12 most recently published posts** — videos, Reels, Tweets, Threads, etc. — and only scans comments on those.
+
+- Older posts are **not** scanned for new comments, even if a viral comment lands on a six‑month‑old video today.
+- "Recent" is measured by each platform's own publish/created timestamp returned by its API.
+- The 12‑post window is per **connected account**, not per workspace. A workspace with 4 connected accounts considers up to 4 × 12 = 48 posts per refresh.
+
+### 2. Up to 2 pages of top‑level comments per post (standard pass)
+
+For each of those 12 posts, Hivra pulls up to **2 pages × 25 comments = 50 top‑level comments**.
+
+- A "page" matches the platform's native pagination cursor.
+- Top‑level means parent comments (not replies). Replies are walked separately — see below.
+
+### 3. Up to 10 pages on threads with recent activity (deep pass)
+
+If a post has *any* comment within the 20‑day age window (see [Lookback period](#lookback-period)), Hivra promotes that post to a deeper pass and pulls up to **10 pages × 25 = 250 top‑level comments** for it.
+
+This is what makes the inbox feel "live" on busy posts: an active thread is escalated automatically, while quiet posts stay capped at the cheaper 2‑page scan.
+
+### 4. Replies up to 12 levels deep
+
+For every top‑level comment Hivra collects, it walks the reply tree up to **12 levels deep**. Replies are pulled with the same 25‑per‑page / 2‑page (or 10‑page, for active threads) pagination as top‑level comments.
+
+- Beyond level 12, deeper replies are not loaded into the inbox.
+- This depth limit applies on every supported platform.
+
+### 5. 20‑day lookback
+
+Every comment that survives the page/depth limits is then filtered by **age**. A comment is kept only if it — or any other comment in the same thread — was created within the last **20 days**.
+
+<Info>
+  The age filter is **thread‑aware**. If even one reply in a thread is within the 20‑day window, the entire thread (including the original parent comment, even if it's older than 20 days) is kept. This preserves context so you don't see orphaned replies with no parent.
+</Info>
+
+### 6. Per‑provider cap: 500 comments
+
+After age filtering, Hivra applies a final **500‑comment cap per platform provider** per refresh. If the filtered set exceeds 500 comments for, say, Instagram, the newest 500 are kept and older ones are discarded for that refresh.
+
+The cap is per provider, not per account, so a workspace with three Instagram accounts shares the 500‑comment budget across all of them.
+
+## Putting it together
+
+For a single refresh of a single connected account, the worst‑case upper bound is roughly:
+
+| Step | Limit |
+| --- | --- |
+| Posts scanned | 12 most recent |
+| Top‑level comments per post (quiet thread) | up to 50 (2 × 25) |
+| Top‑level comments per post (active thread) | up to 250 (10 × 25) |
+| Reply depth | 12 levels |
+| Age window | 20 days (thread‑aware) |
+| Final cap per platform provider | 500 comments |
+
+After every platform finishes its fetch, Hivra merges the batches, deduplicates any comments echoed twice by the same provider (preferring the version that carries a parent reference so threading stays intact), and sorts the inbox **newest first**.
+
+## What is intentionally left out
+
+Some comments will never appear in the inbox by design:
+
+- **Comments on posts older than your 12 most recent.** Hivra does not search your entire post history every refresh — only the most recent window.
+- **Comments older than 20 days, on threads with no recent activity.** A 25‑day‑old comment that nobody has replied to since will be filtered out.
+- **Replies deeper than 12 levels.** Extremely nested sub‑threads are truncated.
+- **Anything beyond the per‑provider 500‑comment cap.** When a single platform's activity exceeds 500 comments in one refresh, the oldest of those are dropped.
+- **TikTok comments.** Not exposed by TikTok's APIs.
+- **Comment types not surfaced by the platform API itself** — for example, Instagram Story replies, hidden comments, or comments on posts the connected account does not own. Hivra can only show what the platform makes available.
+
+## Why these constraints exist
+
+Each platform enforces strict rate limits on its comment endpoints. Without standard caps, a workspace with several busy accounts could exhaust a daily API quota on a single inbox refresh and stop receiving updates for the rest of the day. The standardized limits ensure:
+
+- Every connected account gets equal API budget per refresh.
+- High‑activity posts are escalated to the deeper 10‑page scan automatically.
+- The inbox stays responsive — loading 500 comments per platform is fast; loading 50,000 is not.
+- Refresh behavior is predictable: the same workspace fetched twice in a row produces the same shape of result.
+
+## How this affects what you see
+
+In practice, this means the Engagement inbox is designed for **active community management on your current content**, not as a long‑term archive. If you need to:
+
+- Reply to a comment on a post older than your 12 most recent → reply natively on the platform (or schedule a fresh post and engage there).
+- Audit comments older than 20 days → use the platform's own native tools.
+- Track high‑volume drops that exceed 500 comments per platform per refresh → wait for the next refresh, which will pick up the next batch by recency.
+
+## Related
+
+- [Engagement Inbox](/engagement/overview)
+- [Plans & Pricing](/account/plans)
