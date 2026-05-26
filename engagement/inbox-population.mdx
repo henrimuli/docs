@@ -10,7 +10,7 @@ This page documents exactly how the inbox is populated: which posts Hivra looks 
 
 ## The same rules apply to every platform
 
-Hivra uses one shared set of limits for Instagram, YouTube, Facebook, X (Twitter), and Threads. The exact platform API endpoints differ, but the *constraints* below are identical — so a fetch run produces a predictable, evenly‑weighted slice of activity across every connected account.
+Hivra uses one shared set of limits for Instagram, YouTube, Facebook, X (Twitter), and Threads. The exact platform API endpoints differ, but the _constraints_ below are identical — so a fetch run produces a predictable, evenly‑weighted slice of activity across every connected account.
 
 <Note>
   TikTok does not expose user‑written comments or replies through any public API, so TikTok‑only workspaces are skipped entirely. See [Engagement Inbox](/engagement/overview#tiktok-notes) for the latest status.
@@ -35,7 +35,7 @@ For each of those 12 posts, Hivra pulls up to **2 pages × 25 comments = 50 top�
 
 ### 3. Up to 10 pages on threads with recent activity (deep pass)
 
-If a post has *any* comment within the 20‑day age window (see [Lookback period](#lookback-period)), Hivra promotes that post to a deeper pass and pulls up to **10 pages × 25 = 250 top‑level comments** for it.
+If a post has _any_ comment within the 20‑day age window (see [Lookback period](#5-20‑day-lookback)), Hivra promotes that post to a deeper pass and pulls up to **10 pages × 25 = 250 top‑level comments** for it.
 
 This is what makes the inbox feel "live" on busy posts: an active thread is escalated automatically, while quiet posts stay capped at the cheaper 2‑page scan.
 
