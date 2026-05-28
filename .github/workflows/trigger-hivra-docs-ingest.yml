@@ -20,7 +20,31 @@ jobs:
           INGEST_URL: ${{ secrets.HIVRA_DOCS_INGEST_URL }}
           INGEST_SECRET: ${{ secrets.HIVRA_DOCS_INGEST_SECRET }}
         run: |
-          curl -sf -X POST "$INGEST_URL" \
+          if [ -z "$INGEST_URL" ]; then
+            echo "Missing secret: HIVRA_DOCS_INGEST_URL"
+            exit 1
+          fi
+          if [ -z "$INGEST_SECRET" ]; then
+            echo "Missing secret: HIVRA_DOCS_INGEST_SECRET"
+            exit 1
+          fi
+
+          if [[ ! "$INGEST_URL" =~ ^https?:// ]]; then
+            echo "Invalid HIVRA_DOCS_INGEST_URL: must start with http:// or https://"
+            exit 1
+          fi
+
+          echo "Triggering ingest at: $INGEST_URL"
+          response=$(curl -sS -w "\n%{http_code}" -X POST "$INGEST_URL" \
             -H "Authorization: Bearer $INGEST_SECRET" \
             -H "Content-Type: application/json" \
-            -d '{"source":"henrimuli-docs-push"}'
+            -d '{"source":"henrimuli-docs-push"}')
+
+          http_code=$(echo "$response" | tail -n 1)
+          body=$(echo "$response" | sed '$d')
+
+          echo "Ingest response: $body"
+          if [ "$http_code" -lt 200 ] || [ "$http_code" -ge 300 ]; then
+            echo "Ingest failed with HTTP $http_code"
+            exit 1
+          fi
