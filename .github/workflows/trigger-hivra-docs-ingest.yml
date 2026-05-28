@@ -1,0 +1,26 @@
+# Copy this file to your docs repo as:
+#   .github/workflows/trigger-hivra-docs-ingest.yml
+#
+# GitHub repo secrets (henrimuli/docs → Settings → Secrets):
+#   HIVRA_DOCS_INGEST_URL    = https://hivra.app/api/cron/docs-ingest
+#   HIVRA_DOCS_INGEST_SECRET = same value as DOCS_INGEST_SECRET on Vercel
+
+name: Trigger Hivra docs ingest
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: POST ingest endpoint
+        env:
+          INGEST_URL: ${{ secrets.HIVRA_DOCS_INGEST_URL }}
+          INGEST_SECRET: ${{ secrets.HIVRA_DOCS_INGEST_SECRET }}
+        run: |
+          curl -sf -X POST "$INGEST_URL" \
+            -H "Authorization: Bearer $INGEST_SECRET" \
+            -H "Content-Type: application/json" \
+            -d '{"source":"henrimuli-docs-push"}'
