@@ -158,5 +158,12 @@
   },
   "metadata": {
     "timestamp": false
+  },
+  "description": "Hivra is a cross-posting tool built for content creators and teams.",
+  "contextual": {
+    "options": [
+      "copy"
+    ],
+    "display": "header"
   }
 }
