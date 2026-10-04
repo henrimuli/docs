@@ -1,6 +1,6 @@
 ---
 title: "Analytics Overview: Track Cross-Platform Video Performance"
-description: "See views, likes, comments, shares, audience demographics, and your Hivra Score across every connected platform — all in one Analytics dashboard."
+description: "See views, likes, comments, audience demographics, and your Hivra Score across every platform, plus per-account overviews with Best Time to Post and Top Performing Posts."
 sidebarTitle: "Analytics Overview"
 ---
 
@@ -42,8 +42,26 @@ Use the date range picker at the top of **Analytics** to control the reporting w
 
 The account selector sidebar lets you filter analytics to one or more connected accounts. Select individual accounts to isolate performance for a specific platform, or deselect all accounts to see blended totals across your workspace.
 
+<Tip>
+  On a pointer device, hover over an account tile to see a quick snapshot — its follower count and a few of its key platform metrics — without leaving the account rail.
+</Tip>
+
+Metrics are sourced from each platform's official insights API. If a connected account has lost its OAuth token or the platform's API is unavailable, that account's metrics may be missing. See the coverage hints in the UI for status details.
+
+## Viewing a single account's overview
+
+Click an account tile to open that account's dedicated overview instead of the blended totals. The per-account overview shows the account's own Hivra Score, an Activity Trend chart scoped to that account, a **Best Time To Post** card, and a **Top Performing Posts** table. Click the tile again, or clear the selection, to return to the combined Overview for all your accounts.
+
+### Best Time To Post
+
+The **Best Time To Post** card looks at that account's posts from the last 28 days and groups them into 3-hour windows based on the time of day you published them, using each post's Performance Score to find the window that tends to outperform your typical post. It needs a handful of measured posts before it can suggest a window, and tells you when your recent posts are too spread out to pick a clear winner.
+
+### Top Performing Posts and Performance Score
+
+The **Top Performing Posts** table lists the best-performing posts published in the selected date range for that account, ranked by **Performance Score** — a 0–100 score Hivra calculates for each post from its views, reach (Instagram only), and engagements, adjusted for how long the post has been live.
+
 <Note>
-  Metrics are sourced from each platform's official insights API. If a connected account has lost its OAuth token or the platform's API is unavailable, that account's metrics may be missing. See the coverage hints in the UI for status details.
+  Performance Score is separate from the Hivra Score. Performance Score ranks an account's own posts against each other and only appears on the per-account overview, while the Hivra Score summarizes overall performance for the period and appears on both the blended Overview and each account's overview.
 </Note>
 
 ## Key metrics and KPIs
@@ -65,6 +83,14 @@ The metrics available vary by platform. The following table shows what Hivra sur
 <Warning>
   Hivra never fabricates blended reach across networks that hide the stat. If a metric tile shows "—", it means the platform API did not return data for that account and date range — not that the metric is zero.
 </Warning>
+
+### Change vs the previous period
+
+Each KPI stat card shows a small chip comparing the current period to the immediately preceding period of the same length — for example, the last 7 days against the 7 days before that. An upward arrow means the metric increased and a downward arrow means it decreased; hover the chip to see the previous period's value.
+
+<Note>
+  The change chip only appears when there is a fair comparison to make. It's hidden for metrics with no data in the previous period — for example, right after you connect a new account.
+</Note>
 
 ### Engagements roll-up
 
