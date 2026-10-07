@@ -35,6 +35,7 @@
             "pages": [
               "publishing/overview",
               "publishing/composer",
+              "publishing/media-editor",
               "publishing/ai-captions",
               "publishing/per-file-composer-context",
               "publishing/post-types-platform-limits",
