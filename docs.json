@@ -55,6 +55,7 @@
               "integrations/youtube",
               "integrations/facebook",
               "integrations/x-twitter",
+              "integrations/x-api-usage",
               "integrations/threads"
             ],
             "icon": "link"

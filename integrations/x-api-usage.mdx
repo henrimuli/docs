@@ -1,0 +1,142 @@
+---
+title: "X API Usage Limits: Monthly Budget, Warning Levels, and What Gets Paused"
+description: "X charges Hivra per API call, so every paid plan includes a monthly X budget. Learn the 80/100/130% usage levels and what pauses at each one."
+sidebarTitle: "X API Usage"
+---
+
+Unlike Hivra's other integrations, X charges per API call — reading a post, looking up a profile, publishing a tweet, replying, or liking a comment all cost money on X's side. To keep plans affordable, Hivra gives every paid subscription a monthly **X API budget** and tracks every X call your workspaces make against it. This article explains how the budget works, what happens as you get close to it, and what to do if publishing or syncing to X pauses.
+
+<Info>
+  X requires a Creator or Business plan to connect at all — see [Plans and pricing](/account/plans). The budget described here applies once you've connected an X account.
+</Info>
+
+## What the X budget is
+
+The budget is per **subscription**, not per workspace — if your Business plan has 5 workspaces, they all draw from the same monthly amount.
+
+| Plan | Monthly X budget |
+| --- | --- |
+| Creator | \$2.50 |
+| Business | \$7.50 |
+| Each add-on workspace | +\$1.00 |
+
+<Note>
+  X charges roughly \$0.005 for each post it returns, \$0.01 for each profile it returns, \$0.015 for each post, reply, or like you make, and \$0.20 for a post that contains a link. Hivra passes these costs through as a shared monthly budget instead of billing you per call.
+</Note>
+
+The budget resets at midnight UTC on the 1st of every month, regardless of your subscription's own billing date.
+
+## Usage levels
+
+Hivra tracks your spend against three thresholds. Each one changes what still works:
+
+| Level | Reached at | What happens |
+| --- | --- | --- |
+| **Within budget** | 0–79% | Everything works normally. |
+| **80% used** | 80% | You get a one-time notice. Nothing is paused yet. |
+| **Automatic updates paused** | 100% | Hivra stops refreshing X analytics, comment syncing, and follower counts on its own. Publishing, replies, and likes still work. |
+| **Paused until next month** | 130% | Publishing to X, posting a first comment, replying, liking, unliking, deleting, and connecting a new X account are all paused until the budget resets. Your other platforms are not affected. |
+
+<Warning>
+  A call that would itself push your spend past the 130% ceiling is refused rather than allowed through — so actual spend never runs far past the limit.
+</Warning>
+
+## Checking your usage
+
+<Steps>
+  <Step title="Open Billing settings">
+    Go to **Settings → Plan & billing**. The **X API usage** card appears for any Creator or Business subscription (it's hidden on the Free plan, since Free can't connect X).
+  </Step>
+  <Step title="Read the usage bar">
+    The card shows how much of your monthly budget has been used, when it resets, and a status chip — **Within budget**, **80% used**, **Automatic updates paused**, or **Paused until next month**.
+  </Step>
+  <Step title="Review the breakdown">
+    Below the bar, a per-category breakdown shows what the spend went toward: Publishing, Replies/likes/deletes, Comment syncing, Analytics, Follower counts, Connecting X, and (where applicable) DM syncing and DMs sent.
+  </Step>
+</Steps>
+
+<Tip>
+  The info icon next to **X API usage** explains X's per-call pricing and how the budget is calculated, in case you want the specifics.
+</Tip>
+
+## What pauses at each level
+
+### At 100% — automatic updates pause
+
+Once your usage crosses the full monthly budget, Hivra stops making X calls it initiates on its own schedule:
+
+- Refreshing analytics metrics (views, likes, impressions) for your X posts
+- Refreshing comments in the [Engagement inbox](/engagement/overview) for X accounts
+- Refreshing follower counts for connected X accounts
+
+Nothing already fetched disappears — Hivra keeps showing the data it last synced. It just won't update again until the next reset, or until you reduce usage pressure by upgrading or adding a workspace.
+
+### At 130% — publishing and actions pause
+
+Once usage reaches 130% of the budget, anything that sends a request to X on your behalf is paused until the reset:
+
+- Publishing a post to X from the Composer
+- Posting a first comment to X
+- Replying, liking, unliking, or deleting from the Engagement inbox
+- Connecting a new X account
+
+Your other connected platforms — YouTube, Instagram, TikTok, Facebook, and Threads — are never affected by the X budget.
+
+## What you'll see in the Composer
+
+If you try to publish while the X budget is at 130%, the Composer deselects X (or blocks you from selecting it) and shows an **X paused for this month** modal. It explains that the budget limit is reached, gives the date it resets, and confirms your other selected platforms are not affected. A **See X usage** link takes you straight to the usage card in Billing.
+
+<Note>
+  If you try to connect a new X account while the budget is at 130%, the authorization flow stops with a message explaining the X budget is reached and pointing you to **Settings → Billing**.
+</Note>
+
+## Notification preference
+
+Hivra sends you a notice the first time your usage crosses 80%, 100%, and 130% in a given month, in-app and by email by default. To manage this:
+
+<Steps>
+  <Step title="Open Notification settings">
+    Go to **Settings → Notifications**.
+  </Step>
+  <Step title="Find X usage">
+    Under the **X usage** category, toggle **X API usage alerts** to control how you're notified when your monthly X budget reaches each threshold.
+  </Step>
+</Steps>
+
+## Getting a bigger budget
+
+Since the budget is shared across your whole subscription, there are two ways to raise it:
+
+- **Add a workspace.** Each add-on workspace adds \$1.00/month to your X budget, in addition to the extra workspace itself. See [Plans and pricing](/account/plans).
+- **Upgrade to Business.** Business includes a \$7.50/month X budget, three times the Creator plan's \$2.50.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Why does only X have a usage budget, not the other platforms?">
+    X is the only platform Hivra connects to that charges per API call. The other platforms (YouTube, Instagram, TikTok, Facebook, Threads) don't bill Hivra this way, so they have no equivalent budget.
+  </Accordion>
+
+  <Accordion title="My post to X failed with a budget-related error">
+    This means your subscription's X budget reached 130% for the month. Check **Settings → Plan & billing** to confirm, then either wait for the reset on the 1st (UTC) or add a workspace / upgrade to Business for a bigger budget.
+  </Accordion>
+
+  <Accordion title="My X comments and analytics stopped updating, but I can still post">
+    This is the 100% "automatic updates paused" level — background refreshes for X analytics, comments, and follower counts pause, but publishing and manual actions keep working until usage reaches 130%. The data shown is simply the last successful sync.
+  </Accordion>
+
+  <Accordion title="I can't connect a new X account">
+    If the OAuth flow stops with a message about the X budget, your subscription has reached 130% usage for the month. Resolve it the same way as a paused post: wait for the reset, add a workspace, or upgrade to Business.
+  </Accordion>
+
+  <Accordion title="Does deleting a draft or removing a platform affect my X usage?">
+    No. Usage is only recorded for actual calls to X's API — publishing, replying, liking, and the background syncs described above. Drafting or editing a post in the Composer does not call X's API.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+- [Connect X](/integrations/x-twitter)
+- [Engagement Inbox](/engagement/overview)
+- [Plans and pricing](/account/plans)
+- [Account Settings](/account/settings)
