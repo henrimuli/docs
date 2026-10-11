@@ -66,6 +66,7 @@
               "engagement/overview",
               "engagement/messages",
               "engagement/inbox-population",
+              "engagement/automations",
               "analytics/overview",
               "analytics/export"
             ],
