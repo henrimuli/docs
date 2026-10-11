@@ -55,7 +55,6 @@
               "integrations/youtube",
               "integrations/facebook",
               "integrations/x-twitter",
-              "integrations/x-api-usage",
               "integrations/threads"
             ],
             "icon": "link"
@@ -86,6 +85,7 @@
             "icon": "user",
             "pages": [
               "account/plans",
+              "integrations/x-api-usage",
               "account/settings",
               "account/affiliate-program"
             ]
