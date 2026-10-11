@@ -1,0 +1,203 @@
+---
+title: "Instagram DM Automations: Comment and Keyword-Triggered Replies"
+description: "Automatically DM people who comment a keyword on your Instagram post or message you one, with multi-step flows, buttons, follow-gating, and templates."
+sidebarTitle: "DM Automations"
+---
+
+Automations let Hivra send an Instagram DM for you the moment someone comments a keyword on one of your posts, or sends your account a DM containing one. Each automation is a small message flow — up to five messages, with buttons that open a link or send the next message — so you can turn "comment GUIDE below" into an automatic, multi-step conversation that hands someone a link, checks that they follow you first, or both.
+
+<Info>
+  Automations are Instagram only. They are not available for Facebook Pages, YouTube, TikTok, X, or Threads.
+</Info>
+
+## Where to find it
+
+Automations live under **Dashboard → Engagement**, alongside the **Comments** and **Messages** tabs. Click the **Automations** tab to see every automation you've created and to build a new one.
+
+<Info>
+  Automations requires a paid Hivra plan and a connected Instagram professional account. If no Instagram account is connected, the tab shows a prompt to connect one instead of the automation list. If your Instagram account needs new DM permissions, a banner at the top asks you to reconnect it from **Integrations** before automations can send messages.
+</Info>
+
+## How a flow works
+
+An automation has three parts:
+
+- **A trigger** — what starts the flow: a comment on a post, or a DM you receive.
+- **A match** — whether the comment or DM needs to contain (or exactly be) one of your keywords, or whether any comment qualifies.
+- **A message flow** — one to five messages. Each message can have buttons: a **Continue** button that sends the next message when tapped, or a link button that opens a URL. The first message is sent as soon as the trigger matches; later messages only go out after the person taps a button (or, if Instagram refuses the buttons, after they reply).
+
+<Info>
+  Hivra never messages anyone who hasn't commented or messaged your account. Comment automations use Instagram's private reply, which only works within **7 days** of the comment. A comment or DM sent before you created the automation never triggers it, even if it matches.
+</Info>
+
+## Creating an automation
+
+<Steps>
+  <Step title="Open the Automations tab">
+    Go to **Dashboard → Engagement** and click the **Automations** tab.
+  </Step>
+  <Step title="Click New automation">
+    Select **New automation**. This is disabled if none of your connected Instagram accounts can currently send DMs (for example, while one needs reconnecting).
+  </Step>
+  <Step title="Name it and choose the account">
+    Give the automation a name (for your own reference — it isn't shown to the person who triggers it) and pick which connected **Instagram account** it runs on.
+  </Step>
+  <Step title="Choose what starts it">
+    Under **Start when someone**, choose **Comments on a post** or **Sends you a DM keyword**. See [Trigger types](#trigger-types) below.
+  </Step>
+  <Step title="Set the match and keywords">
+    Choose whether the comment or DM needs to **contain a keyword**, be **exactly** a keyword, or (comments only) match **anything**. Then list your keywords, separated by commas.
+  </Step>
+  <Step title="For comments, choose which posts it applies to">
+    Apply the automation to **all posts and reels**, or pick **specific posts** from a thumbnail picker of your account's recent content.
+  </Step>
+  <Step title="Write the message flow">
+    Write your opening message and add buttons and further messages as needed, or start from a template and adjust it. See [Building the message flow](#building-the-message-flow).
+  </Step>
+  <Step title="Save">
+    Click **Create automation**. The automation is enabled by default and starts matching new comments or DMs right away.
+  </Step>
+</Steps>
+
+<Tip>
+  A live preview on the right of the automation editor shows roughly how the flow will look inside Instagram as you build it — the triggering comment or DM, each message bubble, and the taps that move someone to the next one.
+</Tip>
+
+## Trigger types
+
+| Trigger | Starts when | Opening message is sent as |
+| --- | --- | --- |
+| **Comments on a post** | Someone comments on a post or reel you chose | A private reply to their comment |
+| **Sends you a DM keyword** | Someone sends your account a DM containing a keyword | A reply to their DM |
+
+Only comment automations can match **Anything** — useful for a flow that replies to every comment on a specific post. DM-keyword automations always need at least one keyword, since Hivra can't reply to every DM you receive without one.
+
+## Matching keywords
+
+Under **When the comment** / **When the DM**, choose how strictly a keyword has to match:
+
+- **Contains a keyword** — the comment or DM includes the word or phrase anywhere.
+- **Is exactly a keyword** — the comment or DM, once trimmed, has to equal the keyword.
+- **Anything** (comments only) — every comment on the targeted post(s) matches, regardless of text.
+
+Enter one or more keywords separated by commas. Matching is **not case-sensitive**, and punctuation and accents are ignored — `café` matches `CAFE!!`.
+
+<Note>
+  Keywords can include emoji. A keyword made up only of emoji, like 🔥, matches any comment or DM containing that emoji. A keyword that mixes words and emoji, like `guide 🔥`, needs **both** the word and the emoji present. Plain, word-only keywords ignore any emoji in the text, so `guide` still matches "guide please 🙏".
+</Note>
+
+Click the smiley icon next to the keywords field (or any message field) to open Hivra's emoji picker and insert an emoji at your cursor instead of typing it.
+
+## Targeting specific posts
+
+For comment automations, choose **All posts and reels** to match comments anywhere, or **Specific posts** to restrict the automation to a hand-picked set. Selecting **Specific posts** opens a thumbnail grid of the account's recent posts and reels, paginated 24 at a time — click a thumbnail to select or deselect it.
+
+<Note>
+  If no posts appear in the picker, they haven't synced yet. Recent posts show up here after Hivra's next analytics sync for that account.
+</Note>
+
+## Building the message flow
+
+Each automation has one to five messages. The first is always the opening message (the private reply or DM reply); add up to four more with **Add message**.
+
+For every message you can set:
+
+- **Text** — up to 640 characters, with its own emoji button.
+- **Buttons** — up to 3 per message. Each is either:
+  - **Continue** — sends the next message when tapped. Not available on the last message in the flow (there's nothing after it to send).
+  - **Open a link** — opens a URL you provide. Links must be a full address starting with `https://` or `http://`.
+
+Button labels are limited to 20 characters. Hivra requires every message except the last to have a **Continue** button, so people always have a way to reach the next step.
+
+<Tip>
+  Use **Start from a template** above the message list to begin from one of three starting points, then edit the text, buttons, and links as you like:
+
+  - **Send a link** — one message with a link button.
+  - **Tap to get the link** — an opener with a **Continue** button, then a second message with the link. More people see the message this way than a link stuffed in the first reply.
+  - **Follow to get the link** — asks them to follow you first, checks that they did, and only then sends the link.
+</Tip>
+
+### Requiring a follow before a message
+
+On any message after the first, you can turn on **Only send this if they follow you**. When someone taps through to that message, Hivra checks with Instagram whether they follow your account:
+
+- If they do, the message sends as normal.
+- If they don't, Hivra sends a different message instead — by default, a note that they're not following yet with a button to check again. You can customize both that message's text and its button label. This repeats up to **3 times** per person; after that, taps are still checked silently.
+
+<Warning>
+  A follow check can't be added to the opening message — the person hasn't had a chance to act yet, so there's nothing to check against.
+</Warning>
+
+### Public reply (comment triggers only)
+
+For comment-triggered automations, you can optionally fill in **Also reply publicly**, up to 300 characters. This is posted as a normal public reply under the triggering comment (for example, "Sent you a DM!") in addition to the private flow message, so other people who see the comment thread know you responded.
+
+### What happens if Instagram refuses the buttons
+
+Instagram sometimes won't deliver a button-based message. When that happens, Hivra automatically falls back to sending the same message as plain text, with any link URLs written out and a prompt to reply to continue. A reply from the person then continues the flow to the next step, the same as a button tap would. You don't need to do anything for this — it's shown in the automation's stats as a **fallback**.
+
+## Managing automations
+
+Each automation in the list shows its name, the Instagram account it runs on, a summary of its trigger and match, how many messages it has, and whether it includes a follow check. From here you can:
+
+- **Toggle it on or off** with the switch on the right — a disabled automation stops matching new comments and DMs immediately, without deleting it.
+- **Edit** it using the pencil icon, which reopens the same editor pre-filled with its current settings.
+- **Delete** it using the trash icon. Hivra asks you to confirm, since deleting removes its stats and stops it from replying right away — though any messages it already sent stay in the recipient's inbox. This can't be undone.
+
+### Funnel stats
+
+Every automation card shows a running summary of its performance:
+
+- How many people it **started** a flow with (first message sent).
+- For flows with more than one message, how many **tapped through** to a second message and how many **reached the end** of the flow.
+- How many **link taps** it generated, if any of its messages include a link button.
+- How many attempts **failed** to send.
+- When it last sent a message, and how many times Instagram refused the buttons and Hivra used the text fallback instead.
+
+## Limits
+
+| Limit | Value |
+| --- | --- |
+| Messages per automation | 1–5 |
+| Buttons per message | Up to 3 |
+| Button label length | 20 characters |
+| Message text length | 640 characters |
+| Public reply length | 300 characters |
+| Posts shown per page in the post picker | 24 (4 rows of 6) |
+| Private reply window (comment triggers) | 7 days from the comment |
+| Not-following prompts per person | Up to 3 per flow |
+
+<Info>
+  Automations require a paid Hivra plan, the same as the rest of **Engagement**. On the Free plan, the Engagement section is locked behind an upgrade prompt.
+</Info>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="An account shows a reconnect banner on the Automations tab">
+    This means Hivra's Instagram connection for that account doesn't currently have the permissions automations need to send DMs. Go to **Integrations**, reconnect the account, and accept the requested permissions — automations on that account resume once it's healthy again.
+  </Accordion>
+
+  <Accordion title="The Create automation button is disabled with a tooltip">
+    Hivra validates the automation before saving and shows the first thing left to fix — for example, a missing name, no keyword, no post selected for a "Specific posts" automation, an empty message, a button without a label, a link button missing a full `https://` URL, or a message (other than the last) missing its **Continue** button.
+  </Accordion>
+
+  <Accordion title="Someone who commented or messaged never got a reply">
+    Check that the automation was enabled and already created before they commented or messaged — automations only react to activity from after they're created. For comments, also confirm the comment happened within 7 days and matches your keyword and post selection; Instagram's private-reply window closes after that.
+  </Accordion>
+
+  <Accordion title="A flow stalled partway through">
+    If a message required a follow and the person doesn't follow your account, Hivra sends the "not following yet" message (up to 3 times) instead of continuing — this is expected, not a failure. If a step shows as failed in the automation's stats, open the automation to review its settings, or check that the Instagram connection is still healthy in **Integrations**.
+  </Accordion>
+
+  <Accordion title="Only one automation replies, even though a comment could match more than one">
+    When several of your automations could match the same comment or DM, Hivra only runs the oldest one that matches — it never sends more than one automated reply to the same trigger.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+- [Engagement Inbox](/engagement/overview)
+- [How the Engagement inbox is populated](/engagement/inbox-population)
+- [Connect Instagram](/integrations/instagram)
+- [Hivra Plans and Pricing](/account/plans)
