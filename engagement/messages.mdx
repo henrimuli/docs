@@ -1,0 +1,153 @@
+---
+title: "\"Messages: The Unified Instagram, Messenger, and X DM Inbox\""
+description: "\"Read and reply to Instagram, Messenger, and X direct messages from one inbox in Engagement, with reply-window rules, X's opt-in DM billing, and sync behavior explained.\""
+sidebarTitle: "\"Messages Inbox\""
+---
+
+The **Messages** tab in **Engagement** brings your Instagram, Messenger, and X direct messages into a single inbox, so you can read and reply without opening each platform's app separately. It sits next to the **Comments** tab (for public comments) and the **Automations** tab (for auto-replies) — Messages is specifically for one-to-one conversations with the people who DM your connected accounts.
+
+<Info>
+  Messages supports **Instagram**, **Messenger** (Facebook Pages), and **X**. YouTube, TikTok, and Threads don't offer a way for apps like Hivra to send or receive direct messages, so those platforms never appear here.
+</Info>
+
+## Opening Messages
+
+<Steps>
+  <Step title="Open Engagement">
+    Click **Engagement** in the sidebar.
+  </Step>
+  <Step title="Click the Messages tab">
+    Select **Messages** from the tab bar at the top, next to **Comments** and **Automations**. The tab only appears once you have at least one Instagram, Facebook Page, or X account connected.
+  </Step>
+  <Step title="Pick a conversation">
+    Conversations from every connected account appear in a single list, newest first, with unread conversations shown in bold and a count badge. Click one to open the thread.
+  </Step>
+</Steps>
+
+<Info>
+  If you have no Instagram, Facebook Page, or X account connected, Messages shows a prompt to connect one instead of an empty inbox. See [Integrations](/integrations/overview).
+</Info>
+
+## Reading and replying to a conversation
+
+Each conversation shows the sender's name (or @username, or avatar), which platform they messaged you on, and the message history. Messages sent by an automation are marked with a small **Automation** tag so you can tell them apart from messages you typed yourself.
+
+<Steps>
+  <Step title="Open a conversation">
+    Click any conversation in the list. On a phone or narrow window, the list and the open thread each take the full width — use the back arrow to return to the list.
+  </Step>
+  <Step title="Type your reply">
+    Click the message field at the bottom of the thread and type your reply.
+  </Step>
+  <Step title="Send">
+    Press **Enter** to send (use **Shift + Enter** for a line break), or click **Send**.
+  </Step>
+</Steps>
+
+Each platform caps how long a single message can be:
+
+| Platform | Message length limit |
+| --- | --- |
+| Instagram | 1,000 bytes (roughly 1,000 characters of plain text) |
+| Messenger | 2,000 characters |
+| X | 10,000 characters |
+
+## Filtering by platform
+
+Above the conversation list, pill buttons let you filter to **All**, or to just **Instagram**, **Messenger**, or **X** — only the platforms you have connected and allowed appear as options.
+
+## Reply windows: how long you have to respond
+
+Instagram and Messenger only let you reply within a limited window after the other person's last message — Hivra never messages someone first.
+
+| State | What it means |
+| --- | --- |
+| **Open** | Within 24 hours of their last message. A note under the message field counts down the hours left to reply. |
+| **Extended (human agent)** | Between 24 hours and 7 days since their last message. Hivra sends the reply using Meta's "human agent" tag, which Meta must approve for Hivra's app before this works. A note shows how many days remain. |
+| **Closed** | More than 7 days since their last message, or they haven't messaged you at all. The reply field is replaced with an explanation, and you can't send until they message you again. |
+
+<Note>
+  X has no reply-window restriction — you can reply to an X conversation at any time. Instead, every X DM you send (or receive) is billed against your workspace's monthly X API budget, as explained below.
+</Note>
+
+## Turning on X DMs
+
+Because X charges for every DM its API delivers, X conversations are **off by default** per connected account. A card in the Messages tab invites you to turn them on, showing the cost: roughly \$0.01 for each DM received and \$0.015 for each one you send, drawn from your workspace's shared [monthly X API budget](/integrations/x-api-usage).
+
+<Steps>
+  <Step title="Review the cost notice">
+    In the Messages tab, find the card for your X account prompting you to turn on DMs.
+  </Step>
+  <Step title="Click Turn on X DMs">
+    Hivra subscribes to that account's DM events. Messages sent before you turned it on are not shown — only new DMs from that point on appear.
+  </Step>
+</Steps>
+
+<Warning>
+  If your workspace's monthly X API budget is used up, X DMs are automatically paused for every X account in that workspace until the budget resets. A card in Messages explains this and offers a **Turn back on** button once the budget renews. See [X API Usage](/integrations/x-api-usage) for the full budget breakdown.
+</Warning>
+
+## Keeping the inbox up to date
+
+Messages is designed to open instantly and then quietly catch up:
+
+- The tab first shows whatever Hivra already has stored, so it never waits on Instagram or Messenger to load.
+- In the background, Hivra checks Instagram and Messenger for new conversations and messages at most every 10 minutes while you have the tab open.
+- X conversations update as DMs arrive, since X delivers them directly once you've turned DMs on for that account.
+- While the tab stays open and visible, the inbox also re-checks what's stored roughly every 30 seconds, so a reply you just sent or received shows up without a manual reload.
+
+Click the refresh icon in the Messages header at any time to request an immediate sync instead of waiting for the next automatic one.
+
+<Tip>
+  If a background sync fails — for example, a platform API hiccup — Hivra keeps showing your last-loaded inbox rather than clearing it or showing an error. Use the refresh button to retry.
+</Tip>
+
+## Reconnecting an account for Messages access
+
+If an Instagram or Facebook Page account was connected to Hivra before Hivra started requesting DM permissions, a banner appears at the top of Messages asking you to reconnect that account so it can send and receive DMs.
+
+<Steps>
+  <Step title="Click Reconnect in the banner">
+    This takes you to **Integrations**.
+  </Step>
+  <Step title="Reconnect the account">
+    Reconnect the named account and accept the permissions requested. See [Connect Instagram](/integrations/instagram) or [Connect Facebook](/integrations/facebook) for the full connection flow.
+  </Step>
+</Steps>
+
+Until you reconnect, that account's conversations won't load or send in Messages.
+
+## Plan requirement
+
+Messages is part of **Engagement**, which requires a **Creator** plan or higher. If you're on the Free plan, you'll see an upgrade prompt instead of the inbox. See [Plans and pricing](/account/plans).
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I don't see a Messages tab in Engagement">
+    The Messages tab only appears once you have at least one DM-capable account connected (Instagram, a Facebook Page, or X) and your plan includes Engagement. Connect an account from [Integrations](/integrations/overview) if you haven't already.
+  </Accordion>
+
+  <Accordion title="I can't send a reply — the message field is replaced with a note">
+    This means the conversation's reply window has closed. For Instagram and Messenger, that happens more than 7 days after the other person's last message, or if they haven't messaged you yet — Hivra can't start a conversation on your behalf. Wait for them to message you (or message again) to reopen the window.
+  </Accordion>
+
+  <Accordion title="My X conversations aren't showing up">
+    Check whether X DMs are turned on for that account in the Messages tab — they're off by default. If you already turned them on, a paused card means your workspace's monthly X API budget is used up; it resumes automatically once the budget resets, or you can upgrade or add a workspace for more budget. See [X API Usage](/integrations/x-api-usage).
+  </Accordion>
+
+  <Accordion title="A banner asks me to reconnect an Instagram or Facebook Page account">
+    That account was connected before Hivra requested the permissions it needs to read and send DMs. Click **Reconnect** in the banner and complete the authorization again.
+  </Accordion>
+
+  <Accordion title="A message has an 'Automation' tag I didn't write">
+    That reply was sent automatically by a DM automation configured in the **Automations** tab — for example, a keyword-triggered flow — rather than typed manually from Messages.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+- [Engagement Inbox](/engagement/overview)
+- [How the Engagement inbox is populated](/engagement/inbox-population)
+- [X API Usage](/integrations/x-api-usage)
+- [Plans and pricing](/account/plans)
