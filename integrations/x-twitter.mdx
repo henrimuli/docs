@@ -1,6 +1,6 @@
 ---
 title: "Connect X (Twitter) and Configure Video Post Settings"
-description: "Link your X account to Hivra to publish video clips with tweet text to your timeline, with an optional per-platform caption override in the Composer."
+description: "Link your X account to Hivra to publish video clips with tweet text to your timeline, and learn how the shared monthly X API usage budget affects publishing."
 sidebarTitle: "Connect X"
 ---
 
@@ -23,9 +23,11 @@ Hivra connects to X (formerly Twitter) through X's official authorization flow. 
   </Step>
 </Steps>
 
-<Info>
-  X publishes posts to your public timeline. There is no API-level option to post privately or restrict who sees a post beyond the reply settings described below.
-</Info>
+X publishes posts to your public timeline. There is no API-level option to post privately or restrict who sees a post beyond the reply settings described below.
+
+<Note>
+  X is the one platform where Hivra pays per API call, so your subscription includes a shared monthly budget for X usage. If that budget is used up for the month, connecting (or reconnecting) an X account is blocked until it resets — see [Monthly X API budget](#monthly-x-api-budget) below.
+</Note>
 
 ## X publish settings
 
@@ -46,6 +48,38 @@ To write a different tweet text specifically for X, click the X tile in the **Cu
 <Tip>
   Hashtags and @mentions in your X caption are hyperlinked automatically. Use the per-platform override to include X-specific hashtags that are not relevant to your other destinations.
 </Tip>
+
+## Monthly X API budget
+
+X is the only connected platform where X itself charges Hivra for every API call — reading posts, checking profiles, publishing, replying, and liking all have a cost. To keep plans affordable, every paid Hivra subscription includes a monthly budget for X API usage, shared across all workspaces owned by that subscription.
+
+<Info>
+  The X budget is shared by subscription, not per workspace — if you have several workspaces under the same billing owner, they all draw from the same monthly X budget. The Free plan has no X budget, so X cannot be connected on Free.
+</Info>
+
+| Plan | Monthly X budget |
+| --- | --- |
+| Creator | \$2.50 |
+| Business | \$7.50 |
+| Each add-on workspace | \+\$1.00 |
+
+The budget resets at the start of each calendar month (UTC).
+
+### What happens as usage climbs
+
+| Usage reaches | What happens |
+| --- | --- |
+| 80% of budget | You get a notice. Everything continues to work normally. |
+| 100% of budget | Hivra stops automatically refreshing X data in the background — analytics, Engagement comments, and follower counts. Data already fetched keeps showing; nothing new syncs from X until the budget resets. |
+| 130% of budget | X is paused completely. Hivra blocks publishing to X, posting a first comment on X, replying, liking, or unliking on X, deleting X posts, and connecting or reconnecting an X account, until the budget resets. |
+
+<Warning>
+  If your subscription hits the 130% limit and you try to add X as a destination in the Composer, a **X paused for this month** warning appears, X is automatically deselected, and your other selected platforms are not affected. The warning tells you the date the budget resets.
+</Warning>
+
+### Checking your usage
+
+On the Creator and Business plans, open **Settings → Plan & billing** to see an **X API usage** card showing how much of the monthly budget you've used so far, your current level, and the reset date. You can also choose how you're notified about X usage — at 80%, 100%, and 130% — from **Settings → Notifications**, under **X usage**.
 
 ## Reconnect your X account
 
