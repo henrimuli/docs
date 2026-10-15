@@ -44,6 +44,12 @@ Each conversation shows the sender's name (or @username, or avatar), which platf
   </Step>
 </Steps>
 
+Your message appears in the thread immediately, labeled **Sending…**, instead of waiting for the platform to confirm it. Once Hivra hears back, the label disappears and the message looks like any other sent message. If it doesn't go through, the bubble is marked **Message failed to send** with a **Retry** link — click **Retry** to send the same text again without retyping it.
+
+<Note>
+  Leaving the conversation or closing Messages while a message shows **Sending…** does not cancel it — it keeps trying in the background and updates next time you open that conversation.
+</Note>
+
 Each platform caps how long a single message can be:
 
 | Platform | Message length limit |
@@ -142,6 +148,10 @@ Messages is part of **Engagement**, which requires a **Creator** plan or higher.
 
   <Accordion title="A message has an 'Automation' tag I didn't write">
     That reply was sent automatically by a DM automation configured in the **Automations** tab — for example, a keyword-triggered flow — rather than typed manually from Messages.
+  </Accordion>
+
+  <Accordion title="My message shows 'Message failed to send'">
+    Hivra couldn't deliver that message to the platform — for example, a closed reply window or a temporary API error. Click **Retry** under the message to send the same text again. If it keeps failing, confirm the conversation's reply window is still open and that the account's connection is healthy in [Integrations](/integrations/overview).
   </Accordion>
 </AccordionGroup>
 
