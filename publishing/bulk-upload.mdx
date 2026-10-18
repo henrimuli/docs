@@ -1,6 +1,6 @@
 ---
 title: "Bulk Upload: Publish Multiple Videos in One Session"
-description: "Drop multiple MP4 or MOV files into the Composer at once. Each file becomes its own publish job, with shared captions you can override per file."
+description: "Drop or cloud-import multiple MP4 or MOV files into the Composer at once. Each file becomes its own publish job, with shared captions you can override per file."
 sidebarTitle: "Bulk Uploads"
 ---
 
@@ -19,8 +19,8 @@ Bulk upload lets you bring an entire batch of video clips into a single Composer
   <Step title="Select connected accounts" stepNumber={2}>
     Toggle the account tiles for every platform you want to reach. The account selection applies to all files in the session by default.
   </Step>
-  <Step title="Drop all your video files at once" stepNumber={3}>
-    Drag and drop multiple MP4 or MOV files into the upload area at the same time, or use the file picker to select multiple files. Every file you drop is added to the **upload dock** and begins processing immediately. You can continue adding more files while earlier ones are still uploading.
+  <Step title="Drop or import your video files" stepNumber={3}>
+    Drag and drop multiple MP4 or MOV files into the upload area, use the local file picker, or click one of the cloud import tiles (**Google Drive**, **Dropbox**, or **OneDrive**) below the upload box to import files directly from cloud storage. Every file you select is added to the **upload dock** and begins processing immediately. You can continue adding more files while earlier ones are still uploading.
 
     <Tip>
       You can select up to 10 videos per batch.
@@ -46,6 +46,26 @@ To schedule each clip at a different time:
 3. Repeat for each remaining file.
 
 When you confirm the session, each file creates its own **Scheduled** job in the Library with its own scheduled time. The Calendar view will show all of them spread across your publishing calendar.
+
+## Importing from cloud storage
+
+In addition to uploading files from your device, you can batch import videos and images directly from **Google Drive**, **Dropbox**, or **OneDrive**.
+
+<Steps>
+  <Step title="Click a cloud provider tile">
+    Below the upload box in the Composer, select **Google Drive**, **Dropbox**, or **OneDrive**.
+  </Step>
+  <Step title="Sign in and pick your files">
+    A picker window opens for the selected service. Authorize access if prompted, select your files, and confirm.
+  </Step>
+  <Step title="Wait for processing">
+    Hivra downloads the files into your browser and adds them to the upload dock. Once added, cloud-imported files follow the exact same workflow as local uploads — you can edit captions, set thumbnails, and configure per-platform settings per file.
+  </Step>
+</Steps>
+
+<Note>
+  Cloud imports respect the same limits as local uploads: up to 10 files per batch, supported formats (MP4, MOV, JPG, PNG, WebP), up to 950 MB per file, and a maximum video duration of 15 minutes.
+</Note>
 
 ## Upload dock
 
