@@ -55,7 +55,8 @@
               "integrations/youtube",
               "integrations/facebook",
               "integrations/x-twitter",
-              "integrations/threads"
+              "integrations/threads",
+              "integrations/ai-agents"
             ],
             "icon": "link"
           },
